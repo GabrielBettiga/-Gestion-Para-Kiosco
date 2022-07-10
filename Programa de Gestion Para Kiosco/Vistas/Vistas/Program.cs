@@ -16,7 +16,7 @@ namespace Vistas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPantallaInicial());
+            Application.Run(new BTNinicio());
         }
     }
 }
