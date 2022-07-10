@@ -22,6 +22,25 @@ namespace Vistas.Forms
             InitializeComponent();
         }
 
+        private void AbrirFormHijo(Form FomHijo)
+        {
+            if (FormHijoActual != null)
+            {
+                //open only form
+                FormHijoActual.Close();
+            }
+            FormHijoActual = FomHijo;
+            FomHijo.TopLevel = false;
+            FomHijo.FormBorderStyle = FormBorderStyle.None;
+            FomHijo.Dock = DockStyle.Fill;
+            SUBpanel.Controls.Add(FomHijo);
+            SUBpanel.Tag = FomHijo;
+            FomHijo.BringToFront();
+            FomHijo.Show();
+            
+
+        }
+
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
@@ -78,16 +97,15 @@ namespace Vistas.Forms
         private void btnCargarProducto_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            LBLcarga.Visible = true;
-            LBLeditar.Visible = false;
+            AbrirFormHijo(new Forms.CargarProductos());
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            LBLeditar.Visible = true;
-            LBLcarga.Visible = false;
-            
+            AbrirFormHijo(new Forms.EditarProductos());
+
         }
     }
 }

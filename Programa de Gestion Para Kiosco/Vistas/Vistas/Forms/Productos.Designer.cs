@@ -35,10 +35,11 @@ namespace Vistas.Forms
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnCargarProducto = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.LBLcarga = new System.Windows.Forms.Label();
-            this.LBLeditar = new System.Windows.Forms.Label();
+            this.SUBpanel = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelMenu.SuspendLayout();
+            this.SUBpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelEscritorio
@@ -53,8 +54,7 @@ namespace Vistas.Forms
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.LBLeditar);
-            this.panel1.Controls.Add(this.LBLcarga);
+            this.panel1.Controls.Add(this.SUBpanel);
             this.panel1.Controls.Add(this.panelMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -102,7 +102,7 @@ namespace Vistas.Forms
             this.btnCargarProducto.FlatAppearance.BorderSize = 0;
             this.btnCargarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarProducto.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnCargarProducto.IconChar = FontAwesome.Sharp.IconChar.Dolly;
+            this.btnCargarProducto.IconChar = FontAwesome.Sharp.IconChar.DollyBox;
             this.btnCargarProducto.IconColor = System.Drawing.Color.Gainsboro;
             this.btnCargarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCargarProducto.IconSize = 32;
@@ -127,25 +127,24 @@ namespace Vistas.Forms
             this.panelLogo.Size = new System.Drawing.Size(220, 121);
             this.panelLogo.TabIndex = 1;
             // 
-            // LBLcarga
+            // SUBpanel
             // 
-            this.LBLcarga.AutoSize = true;
-            this.LBLcarga.Location = new System.Drawing.Point(427, 121);
-            this.LBLcarga.Name = "LBLcarga";
-            this.LBLcarga.Size = new System.Drawing.Size(171, 17);
-            this.LBLcarga.TabIndex = 2;
-            this.LBLcarga.Text = "CARGA DE PRODUCTOS";
-            this.LBLcarga.Visible = false;
+            this.SUBpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SUBpanel.Controls.Add(this.panel3);
+            this.SUBpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SUBpanel.Location = new System.Drawing.Point(220, 0);
+            this.SUBpanel.Name = "SUBpanel";
+            this.SUBpanel.Size = new System.Drawing.Size(580, 450);
+            this.SUBpanel.TabIndex = 4;
             // 
-            // LBLeditar
+            // panel3
             // 
-            this.LBLeditar.AutoSize = true;
-            this.LBLeditar.Location = new System.Drawing.Point(427, 121);
-            this.LBLeditar.Name = "LBLeditar";
-            this.LBLeditar.Size = new System.Drawing.Size(178, 17);
-            this.LBLeditar.TabIndex = 3;
-            this.LBLeditar.Text = "EDICION DE PRODUCTOS";
-            this.LBLeditar.Visible = false;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(9, 450);
+            this.panel3.TabIndex = 3;
             // 
             // Productos
             // 
@@ -157,8 +156,8 @@ namespace Vistas.Forms
             this.Name = "Productos";
             this.Text = "Productos";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panelMenu.ResumeLayout(false);
+            this.SUBpanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -171,7 +170,7 @@ namespace Vistas.Forms
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnCargarProducto;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Label LBLeditar;
-        private System.Windows.Forms.Label LBLcarga;
+        private System.Windows.Forms.Panel SUBpanel;
+        private System.Windows.Forms.Panel panel3;
     }
 }

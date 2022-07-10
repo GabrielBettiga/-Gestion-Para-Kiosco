@@ -30,59 +30,35 @@ namespace Vistas.Forms
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblCargarCompra = new System.Windows.Forms.Label();
-            this.lblHistorialDeCompra = new System.Windows.Forms.Label();
+            this.SUBpanel = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.btnHistorialDeCompra = new FontAwesome.Sharp.IconButton();
             this.btnCargarCompra = new FontAwesome.Sharp.IconButton();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.SUBpanel.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.SUBpanel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 6;
             // 
-            // panel2
+            // SUBpanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel2.Controls.Add(this.lblCargarCompra);
-            this.panel2.Controls.Add(this.lblHistorialDeCompra);
-            this.panel2.Controls.Add(this.panelMenu);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 450);
-            this.panel2.TabIndex = 7;
-            // 
-            // lblCargarCompra
-            // 
-            this.lblCargarCompra.AutoSize = true;
-            this.lblCargarCompra.Location = new System.Drawing.Point(427, 164);
-            this.lblCargarCompra.Name = "lblCargarCompra";
-            this.lblCargarCompra.Size = new System.Drawing.Size(129, 17);
-            this.lblCargarCompra.TabIndex = 3;
-            this.lblCargarCompra.Text = "CARGAR COMPRA";
-            this.lblCargarCompra.Visible = false;
-            // 
-            // lblHistorialDeCompra
-            // 
-            this.lblHistorialDeCompra.AutoSize = true;
-            this.lblHistorialDeCompra.Location = new System.Drawing.Point(427, 164);
-            this.lblHistorialDeCompra.Name = "lblHistorialDeCompra";
-            this.lblHistorialDeCompra.Size = new System.Drawing.Size(166, 17);
-            this.lblHistorialDeCompra.TabIndex = 2;
-            this.lblHistorialDeCompra.Text = "HISTORIAL DE COMPRA";
-            this.lblHistorialDeCompra.Visible = false;
+            this.SUBpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SUBpanel.Controls.Add(this.panelMenu);
+            this.SUBpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SUBpanel.Location = new System.Drawing.Point(0, 0);
+            this.SUBpanel.Name = "SUBpanel";
+            this.SUBpanel.Size = new System.Drawing.Size(800, 450);
+            this.SUBpanel.TabIndex = 7;
             // 
             // panelMenu
             // 
@@ -95,6 +71,15 @@ namespace Vistas.Forms
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 450);
             this.panelMenu.TabIndex = 1;
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.panelLogo.Size = new System.Drawing.Size(220, 175);
+            this.panelLogo.TabIndex = 1;
             // 
             // btnHistorialDeCompra
             // 
@@ -140,15 +125,6 @@ namespace Vistas.Forms
             this.btnCargarCompra.UseVisualStyleBackColor = true;
             this.btnCargarCompra.Click += new System.EventHandler(this.btnCargarCompra_Click);
             // 
-            // panelLogo
-            // 
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.panelLogo.Size = new System.Drawing.Size(220, 175);
-            this.panelLogo.TabIndex = 1;
-            // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -158,8 +134,7 @@ namespace Vistas.Forms
             this.Name = "Compras";
             this.Text = "Compras";
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.SUBpanel.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -168,12 +143,10 @@ namespace Vistas.Forms
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblCargarCompra;
-        private System.Windows.Forms.Label lblHistorialDeCompra;
+        private System.Windows.Forms.Panel SUBpanel;
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton btnHistorialDeCompra;
         private FontAwesome.Sharp.IconButton btnCargarCompra;
         private System.Windows.Forms.Panel panelLogo;
+        private FontAwesome.Sharp.IconButton btnHistorialDeCompra;
     }
 }
