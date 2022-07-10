@@ -134,6 +134,12 @@ namespace Vistas
             AbrirFormHijo(new Forms.Reportes());
         }
 
+        private void BTNconfiguracion_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color6);
+            AbrirFormHijo(new Forms.Configuracion());
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             FormHijoActual.Close();
@@ -158,6 +164,30 @@ namespace Vistas
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void BTNcerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void BTNmaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            BTNmaximizar.Visible = false;
+            BTNrestaurar.Visible = true;
+        }
+
+        private void BTNrestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            BTNrestaurar.Visible = false;
+            BTNmaximizar.Visible = true;
+        }
+
+        private void BTNminimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
