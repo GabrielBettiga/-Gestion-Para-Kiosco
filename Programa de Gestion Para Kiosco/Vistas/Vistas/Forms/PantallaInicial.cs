@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 namespace Vistas
 {
-    public partial class FormPantallaInicial : Form
+    public partial class PantallaInicial : Form
     {
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -24,7 +24,7 @@ namespace Vistas
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        public FormPantallaInicial()
+        public PantallaInicial()
         {
             InitializeComponent();
         }

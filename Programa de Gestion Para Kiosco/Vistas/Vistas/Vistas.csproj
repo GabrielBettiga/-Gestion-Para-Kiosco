@@ -53,70 +53,70 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormCompras.cs">
+    <Compile Include="Forms\Compras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCompras.Designer.cs">
-      <DependentUpon>FormCompras.cs</DependentUpon>
+    <Compile Include="Forms\Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormEmpleados.cs">
+    <Compile Include="Forms\Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEmpleados.Designer.cs">
-      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    <Compile Include="Forms\Empleados.Designer.cs">
+      <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPantallaInicial.cs">
+    <Compile Include="Forms\PantallaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPantallaInicial.Designer.cs">
-      <DependentUpon>FormPantallaInicial.cs</DependentUpon>
+    <Compile Include="Forms\PantallaInicial.Designer.cs">
+      <DependentUpon>PantallaInicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProductos.cs">
+    <Compile Include="Forms\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProductos.Designer.cs">
-      <DependentUpon>FormProductos.cs</DependentUpon>
+    <Compile Include="Forms\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReportes.cs">
+    <Compile Include="Forms\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReportes.Designer.cs">
-      <DependentUpon>FormReportes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormVentas.Designer.cs">
-      <DependentUpon>FormVentas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Inicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inicio.Designer.cs">
+    <Compile Include="Forms\Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Ventas.Designer.cs">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormCompras.resx">
-      <DependentUpon>FormCompras.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEmpleados.resx">
-      <DependentUpon>FormEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Empleados.resx">
+      <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPantallaInicial.resx">
-      <DependentUpon>FormPantallaInicial.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\PantallaInicial.resx">
+      <DependentUpon>PantallaInicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProductos.resx">
-      <DependentUpon>FormProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReportes.resx">
-      <DependentUpon>FormReportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormVentas.resx">
-      <DependentUpon>FormVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
+    <EmbeddedResource Include="Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Ventas.resx">
+      <DependentUpon>Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

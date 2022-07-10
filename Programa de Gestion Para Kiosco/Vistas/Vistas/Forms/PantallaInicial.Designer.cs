@@ -1,7 +1,7 @@
 ﻿
 namespace Vistas
 {
-    partial class FormPantallaInicial
+    partial class PantallaInicial
     {
         /// <summary>
         /// Required designer variable.

@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
+
+
+
 namespace Vistas
 {
     public partial class BTNinicio : Form
@@ -104,31 +107,31 @@ namespace Vistas
         private void BRNproductos_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-           AbrirFormHijo(new FormProductos());
+           AbrirFormHijo(new Forms.Productos());
         }
 
         private void BTNcompras_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            AbrirFormHijo(new FormCompras());
+            AbrirFormHijo(new Forms.Compras());
         }
 
         private void BTNempleados_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            AbrirFormHijo(new FormEmpleados());
+            AbrirFormHijo(new Forms.Empleados());
         }
 
         private void BTNventas_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            AbrirFormHijo(new FormVentas());
+            AbrirFormHijo(new Forms.Ventas());
         }
 
         private void BTNreportes_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            AbrirFormHijo(new FormReportes());
+            AbrirFormHijo(new Forms.Reportes());
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

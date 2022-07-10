@@ -36,20 +36,21 @@ namespace Vistas
             this.LBLtitulo = new System.Windows.Forms.Label();
             this.PanelSombra = new System.Windows.Forms.Panel();
             this.PanelEscritorio = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.IconoDeFormularioActual = new FontAwesome.Sharp.IconPictureBox();
             this.BTNreportes = new FontAwesome.Sharp.IconButton();
             this.BTNventas = new FontAwesome.Sharp.IconButton();
             this.BTNempleados = new FontAwesome.Sharp.IconButton();
             this.BTNcompras = new FontAwesome.Sharp.IconButton();
             this.BRNproductos = new FontAwesome.Sharp.IconButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitulo.SuspendLayout();
             this.PanelEscritorio.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.IconoDeFormularioActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoDeFormularioActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,12 +113,24 @@ namespace Vistas
             // PanelEscritorio
             // 
             this.PanelEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.PanelEscritorio.Controls.Add(this.panel1);
             this.PanelEscritorio.Controls.Add(this.pictureBox2);
             this.PanelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelEscritorio.Location = new System.Drawing.Point(220, 84);
             this.PanelEscritorio.Name = "PanelEscritorio";
             this.PanelEscritorio.Size = new System.Drawing.Size(979, 547);
             this.PanelEscritorio.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(307, 132);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(306, 142);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // IconoDeFormularioActual
             // 
@@ -242,17 +255,6 @@ namespace Vistas
             this.BRNproductos.UseVisualStyleBackColor = true;
             this.BRNproductos.Click += new System.EventHandler(this.BRNproductos_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(307, 132);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(306, 142);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -263,6 +265,15 @@ namespace Vistas
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(9, 547);
+            this.panel1.TabIndex = 3;
             // 
             // BTNinicio
             // 
@@ -280,8 +291,8 @@ namespace Vistas
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             this.PanelEscritorio.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.IconoDeFormularioActual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IconoDeFormularioActual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -303,5 +314,6 @@ namespace Vistas
         private System.Windows.Forms.Panel PanelSombra;
         private System.Windows.Forms.Panel PanelEscritorio;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
