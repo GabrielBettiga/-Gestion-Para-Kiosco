@@ -171,18 +171,27 @@ namespace Vistas
             Application.Exit();
         }
 
+        //Capturar posicion y tamaño antes de maximizar para restaurar
+        int lx, ly;
+        int sw, sh;
         private void BTNmaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            lx = this.Location.X;
+            ly = this.Location.Y;
+            sw = this.Size.Width;
+            sh = this.Size.Height;
             BTNmaximizar.Visible = false;
             BTNrestaurar.Visible = true;
+            this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
 
         private void BTNrestaurar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
-            BTNrestaurar.Visible = false;
             BTNmaximizar.Visible = true;
+            BTNrestaurar.Visible = false;
+            this.Size = new Size(sw, sh);
+            this.Location = new Point(lx, ly);
         }
 
         private void BTNminimizar_Click(object sender, EventArgs e)

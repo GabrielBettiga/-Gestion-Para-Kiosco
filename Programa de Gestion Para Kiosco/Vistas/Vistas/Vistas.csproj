@@ -65,6 +65,24 @@
     <Compile Include="Forms\CargarProductos.Designer.cs">
       <DependentUpon>CargarProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\CargarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CargarUsuario.Designer.cs">
+      <DependentUpon>CargarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CargarVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CargarVenta.Designer.cs">
+      <DependentUpon>CargarVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CierreDeCaja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CierreDeCaja.Designer.cs">
+      <DependentUpon>CierreDeCaja.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Compras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +95,12 @@
     <Compile Include="Forms\Configuracion.Designer.cs">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EditarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditarEmpleados.Designer.cs">
+      <DependentUpon>EditarEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EditarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +112,24 @@
     </Compile>
     <Compile Include="Forms\Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HistorialDeCierre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistorialDeCierre.Designer.cs">
+      <DependentUpon>HistorialDeCierre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HistorialDeCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistorialDeCompras.Designer.cs">
+      <DependentUpon>HistorialDeCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HistorialDeVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistorialDeVentas.Designer.cs">
+      <DependentUpon>HistorialDeVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\PantallaInicial.cs">
       <SubType>Form</SubType>
@@ -127,17 +169,38 @@
     <EmbeddedResource Include="Forms\CargarProductos.resx">
       <DependentUpon>CargarProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CargarUsuario.resx">
+      <DependentUpon>CargarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CargarVenta.resx">
+      <DependentUpon>CargarVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CierreDeCaja.resx">
+      <DependentUpon>CierreDeCaja.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Compras.resx">
       <DependentUpon>Compras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Configuracion.resx">
       <DependentUpon>Configuracion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditarEmpleados.resx">
+      <DependentUpon>EditarEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\EditarProductos.resx">
       <DependentUpon>EditarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorialDeCierre.resx">
+      <DependentUpon>HistorialDeCierre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorialDeCompras.resx">
+      <DependentUpon>HistorialDeCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistorialDeVentas.resx">
+      <DependentUpon>HistorialDeVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PantallaInicial.resx">
       <DependentUpon>PantallaInicial.cs</DependentUpon>

@@ -76,19 +76,38 @@ namespace Vistas.Forms
             }
         }
 
+        private void AbrirFormHijo(Form FomHijo)
+        {
+            if (FormHijoActual != null)
+            {
+                //open only form
+                FormHijoActual.Close();
+            }
+            FormHijoActual = FomHijo;
+            FomHijo.TopLevel = false;
+            FomHijo.FormBorderStyle = FormBorderStyle.None;
+            FomHijo.Dock = DockStyle.Fill;
+            SUBpanel.Controls.Add(FomHijo);
+            SUBpanel.Tag = FomHijo;
+            FomHijo.BringToFront();
+            FomHijo.Show();
+
+
+        }
+
         private void btnCargarEmpleado_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            lblCargarUsuario.Visible = true;
-            lblEditarUsuario.Visible = false;
+            AbrirFormHijo(new Forms.CargarUsuario());
+            
+            
         }
 
         private void btnEditarEmpleado_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            lblEditarUsuario.Visible = true;
-            lblCargarUsuario.Visible = false;
-            
+
+            AbrirFormHijo(new Forms.EditarEmpleados());
         }
     }
 }

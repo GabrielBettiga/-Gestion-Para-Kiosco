@@ -103,9 +103,10 @@ namespace Vistas.Forms
         private void btnHistorialDeCompra_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            AbrirFormHijo(new Forms.HistorialDeCompras());
             //lblHistorialDeCompra.Visible = true;
             //lblCargarCompra.Visible = false;
-            
+
         }
     }
 }

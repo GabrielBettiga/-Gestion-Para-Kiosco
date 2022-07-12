@@ -29,28 +29,24 @@ namespace Vistas.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.SUBpanel = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnEditarEmpleado = new FontAwesome.Sharp.IconButton();
             this.btnCargarEmpleado = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.lblCargarUsuario = new System.Windows.Forms.Label();
-            this.lblEditarUsuario = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.SUBpanel.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // SUBpanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.lblEditarUsuario);
-            this.panel1.Controls.Add(this.lblCargarUsuario);
-            this.panel1.Controls.Add(this.panelMenu);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
-            this.panel1.TabIndex = 6;
+            this.SUBpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SUBpanel.Controls.Add(this.panelMenu);
+            this.SUBpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SUBpanel.Location = new System.Drawing.Point(0, 0);
+            this.SUBpanel.Name = "SUBpanel";
+            this.SUBpanel.Size = new System.Drawing.Size(800, 450);
+            this.SUBpanel.TabIndex = 6;
             // 
             // panelMenu
             // 
@@ -117,36 +113,15 @@ namespace Vistas.Forms
             this.panelLogo.Size = new System.Drawing.Size(220, 235);
             this.panelLogo.TabIndex = 1;
             // 
-            // lblCargarUsuario
-            // 
-            this.lblCargarUsuario.AutoSize = true;
-            this.lblCargarUsuario.Location = new System.Drawing.Point(391, 185);
-            this.lblCargarUsuario.Name = "lblCargarUsuario";
-            this.lblCargarUsuario.Size = new System.Drawing.Size(185, 17);
-            this.lblCargarUsuario.TabIndex = 2;
-            this.lblCargarUsuario.Text = "CARGAR USUARIO NUEVO";
-            this.lblCargarUsuario.Visible = false;
-            // 
-            // lblEditarUsuario
-            // 
-            this.lblEditarUsuario.AutoSize = true;
-            this.lblEditarUsuario.Location = new System.Drawing.Point(391, 185);
-            this.lblEditarUsuario.Name = "lblEditarUsuario";
-            this.lblEditarUsuario.Size = new System.Drawing.Size(133, 17);
-            this.lblEditarUsuario.TabIndex = 3;
-            this.lblEditarUsuario.Text = "EDITAR USUARIOS";
-            this.lblEditarUsuario.Visible = false;
-            // 
             // Empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SUBpanel);
             this.Name = "Empleados";
             this.Text = "Empleados";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.SUBpanel.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -154,12 +129,10 @@ namespace Vistas.Forms
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel SUBpanel;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnEditarEmpleado;
         private FontAwesome.Sharp.IconButton btnCargarEmpleado;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Label lblEditarUsuario;
-        private System.Windows.Forms.Label lblCargarUsuario;
     }
 }

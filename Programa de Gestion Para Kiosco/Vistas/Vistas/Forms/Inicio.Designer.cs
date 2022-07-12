@@ -256,7 +256,7 @@ namespace Vistas
             this.BTNrestaurar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BTNrestaurar.IconSize = 32;
             this.BTNrestaurar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNrestaurar.Location = new System.Drawing.Point(889, 3);
+            this.BTNrestaurar.Location = new System.Drawing.Point(877, 21);
             this.BTNrestaurar.Name = "BTNrestaurar";
             this.BTNrestaurar.Size = new System.Drawing.Size(42, 37);
             this.BTNrestaurar.TabIndex = 5;
@@ -278,7 +278,7 @@ namespace Vistas
             this.BTNcerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BTNcerrar.IconSize = 32;
             this.BTNcerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNcerrar.Location = new System.Drawing.Point(937, 3);
+            this.BTNcerrar.Location = new System.Drawing.Point(925, 21);
             this.BTNcerrar.Name = "BTNcerrar";
             this.BTNcerrar.Size = new System.Drawing.Size(42, 37);
             this.BTNcerrar.TabIndex = 4;
@@ -299,7 +299,7 @@ namespace Vistas
             this.BTNmaximizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BTNmaximizar.IconSize = 32;
             this.BTNmaximizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNmaximizar.Location = new System.Drawing.Point(889, 3);
+            this.BTNmaximizar.Location = new System.Drawing.Point(877, 21);
             this.BTNmaximizar.Name = "BTNmaximizar";
             this.BTNmaximizar.Size = new System.Drawing.Size(42, 37);
             this.BTNmaximizar.TabIndex = 3;
@@ -320,7 +320,7 @@ namespace Vistas
             this.BTNminimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.BTNminimizar.IconSize = 32;
             this.BTNminimizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BTNminimizar.Location = new System.Drawing.Point(841, 3);
+            this.BTNminimizar.Location = new System.Drawing.Point(829, 21);
             this.BTNminimizar.Name = "BTNminimizar";
             this.BTNminimizar.Size = new System.Drawing.Size(42, 37);
             this.BTNminimizar.TabIndex = 2;
@@ -363,6 +363,7 @@ namespace Vistas
             // 
             // PanelEscritorio
             // 
+            this.PanelEscritorio.AutoScroll = true;
             this.PanelEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.PanelEscritorio.Controls.Add(this.panel1);
             this.PanelEscritorio.Controls.Add(this.pictureBox2);
@@ -385,9 +386,9 @@ namespace Vistas
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(307, 132);
+            this.pictureBox2.Location = new System.Drawing.Point(317, 132);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(306, 142);
+            this.pictureBox2.Size = new System.Drawing.Size(294, 200);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -401,6 +402,7 @@ namespace Vistas
             this.Controls.Add(this.PanelSombra);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BTNinicio";
             this.Text = "Inicio";
             this.panelMenu.ResumeLayout(false);

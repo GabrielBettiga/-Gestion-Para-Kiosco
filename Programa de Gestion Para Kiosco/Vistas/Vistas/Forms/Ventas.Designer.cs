@@ -29,48 +29,24 @@ namespace Vistas.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblCargarVenta = new System.Windows.Forms.Label();
-            this.lblHistorialDeVenta = new System.Windows.Forms.Label();
+            this.SUBpanel = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnHistorialDeVentas = new FontAwesome.Sharp.IconButton();
             this.btnCargarVenta = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.SUBpanel.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // SUBpanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.lblCargarVenta);
-            this.panel1.Controls.Add(this.lblHistorialDeVenta);
-            this.panel1.Controls.Add(this.panelMenu);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 450);
-            this.panel1.TabIndex = 6;
-            // 
-            // lblCargarVenta
-            // 
-            this.lblCargarVenta.AutoSize = true;
-            this.lblCargarVenta.Location = new System.Drawing.Point(427, 164);
-            this.lblCargarVenta.Name = "lblCargarVenta";
-            this.lblCargarVenta.Size = new System.Drawing.Size(116, 17);
-            this.lblCargarVenta.TabIndex = 3;
-            this.lblCargarVenta.Text = "CARGAR VENTA";
-            this.lblCargarVenta.Visible = false;
-            // 
-            // lblHistorialDeVenta
-            // 
-            this.lblHistorialDeVenta.AutoSize = true;
-            this.lblHistorialDeVenta.Location = new System.Drawing.Point(427, 164);
-            this.lblHistorialDeVenta.Name = "lblHistorialDeVenta";
-            this.lblHistorialDeVenta.Size = new System.Drawing.Size(153, 17);
-            this.lblHistorialDeVenta.TabIndex = 2;
-            this.lblHistorialDeVenta.Text = "HISTORIAL DE VENTA";
-            this.lblHistorialDeVenta.Visible = false;
+            this.SUBpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SUBpanel.Controls.Add(this.panelMenu);
+            this.SUBpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SUBpanel.Location = new System.Drawing.Point(0, 0);
+            this.SUBpanel.Name = "SUBpanel";
+            this.SUBpanel.Size = new System.Drawing.Size(800, 450);
+            this.SUBpanel.TabIndex = 6;
             // 
             // panelMenu
             // 
@@ -142,11 +118,10 @@ namespace Vistas.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SUBpanel);
             this.Name = "Ventas";
             this.Text = "Ventas";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.SUBpanel.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -154,9 +129,7 @@ namespace Vistas.Forms
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblCargarVenta;
-        private System.Windows.Forms.Label lblHistorialDeVenta;
+        private System.Windows.Forms.Panel SUBpanel;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnHistorialDeVentas;
         private FontAwesome.Sharp.IconButton btnCargarVenta;

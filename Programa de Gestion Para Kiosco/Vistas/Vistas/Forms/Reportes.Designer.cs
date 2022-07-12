@@ -29,48 +29,24 @@ namespace Vistas.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblHistorialDeCierre = new System.Windows.Forms.Label();
-            this.lblCierreDeCaja = new System.Windows.Forms.Label();
+            this.SUBpanel = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnHistorialDeCierre = new FontAwesome.Sharp.IconButton();
             this.btnCierreDeCaja = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
+            this.SUBpanel.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // SUBpanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panel1.Controls.Add(this.lblHistorialDeCierre);
-            this.panel1.Controls.Add(this.lblCierreDeCaja);
-            this.panel1.Controls.Add(this.panelMenu);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 504);
-            this.panel1.TabIndex = 6;
-            // 
-            // lblHistorialDeCierre
-            // 
-            this.lblHistorialDeCierre.AutoSize = true;
-            this.lblHistorialDeCierre.Location = new System.Drawing.Point(427, 132);
-            this.lblHistorialDeCierre.Name = "lblHistorialDeCierre";
-            this.lblHistorialDeCierre.Size = new System.Drawing.Size(157, 17);
-            this.lblHistorialDeCierre.TabIndex = 3;
-            this.lblHistorialDeCierre.Text = "HISTORIAL DE CIERRE";
-            this.lblHistorialDeCierre.Visible = false;
-            // 
-            // lblCierreDeCaja
-            // 
-            this.lblCierreDeCaja.AutoSize = true;
-            this.lblCierreDeCaja.Location = new System.Drawing.Point(427, 132);
-            this.lblCierreDeCaja.Name = "lblCierreDeCaja";
-            this.lblCierreDeCaja.Size = new System.Drawing.Size(119, 17);
-            this.lblCierreDeCaja.TabIndex = 2;
-            this.lblCierreDeCaja.Text = "CIERRE DE CAJA";
-            this.lblCierreDeCaja.Visible = false;
+            this.SUBpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.SUBpanel.Controls.Add(this.panelMenu);
+            this.SUBpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SUBpanel.Location = new System.Drawing.Point(0, 0);
+            this.SUBpanel.Name = "SUBpanel";
+            this.SUBpanel.Size = new System.Drawing.Size(800, 504);
+            this.SUBpanel.TabIndex = 6;
             // 
             // panelMenu
             // 
@@ -142,11 +118,10 @@ namespace Vistas.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 504);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SUBpanel);
             this.Name = "Reportes";
             this.Text = "Reportes";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.SUBpanel.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -154,9 +129,7 @@ namespace Vistas.Forms
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblHistorialDeCierre;
-        private System.Windows.Forms.Label lblCierreDeCaja;
+        private System.Windows.Forms.Panel SUBpanel;
         private System.Windows.Forms.Panel panelMenu;
         private FontAwesome.Sharp.IconButton btnHistorialDeCierre;
         private FontAwesome.Sharp.IconButton btnCierreDeCaja;
