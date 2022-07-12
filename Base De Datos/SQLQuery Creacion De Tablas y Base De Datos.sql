@@ -34,16 +34,42 @@ CONSTRAINT PK_Locales PRIMARY KEY (ID_Local_L)
 )
 GO
 
+--11
+CREATE TABLE TIPOS_DE_USUARIOS(
+ID_Tipo_De_Usuario_TU bit,
+Descripcion_TU Varchar (100),
+Estado_TU bit DEFAULT 1,
+CONSTRAINT PK_TipoDeUsuarios PRIMARY KEY (ID_Tipo_De_Usuario_TU)
+)
+GO
+
+--12
+CREATE TABLE USUARIOS(
+ID_Usuario_U INT IDENTITY (1,1),
+DNI_U Varchar (100),
+Tipo_Usuario_U bit,
+Nombre_U Varchar (100),
+Apellido_U Varchar (100),
+Contraseña_U Varchar (100),
+Estado_U bit DEFAULT 1
+CONSTRAINT PK_Usuarios PRIMARY KEY (ID_Usuario_U),
+CONSTRAINT FK_Usuarios_TipoDeUsuario FOREIGN KEY (Tipo_Usuario_U) REFERENCES TIPOS_DE_USUARIOS (ID_Tipo_De_Usuario_TU),
+CONSTRAINT UQ_UsuariosDNI Unique (DNI_U)
+)
+GO
+
 --3
 CREATE TABLE VENTAS(
 ID_Venta_V INT IDENTITY (1,1),
 ID_Local_V INT, 
 Metodo_De_Pago_V INT,
 Monto_Total_V DECIMAL(8,2),
+ID_Usuario_V INT,
 Fecha_Hora_V smalldatetime
 CONSTRAINT PK_Ventas PRIMARY KEY (ID_Venta_V),
 CONSTRAINT FK_Ventas_Locales FOREIGN KEY (ID_Local_V) REFERENCES Locales (ID_Local_L),
-CONSTRAINT FK_Ventas_Metodo_De_Pago FOREIGN KEY (Metodo_De_Pago_V) REFERENCES METODO_DE_PAGO (ID_Metodo_MP)
+CONSTRAINT FK_Ventas_Metodo_De_Pago FOREIGN KEY (Metodo_De_Pago_V) REFERENCES METODO_DE_PAGO (ID_Metodo_MP),
+CONSTRAINT FK_Ventas_Usuarios FOREIGN KEY (ID_Usuario_V) REFERENCES USUARIOS (ID_Usuario_U)
 )
 GO
 
@@ -78,7 +104,6 @@ GO
 
 --7
 CREATE TABLE PRODUCTOS(
-ID_De_Proveedor_P Varchar (100),
 ID_Producto_P Varchar (100),
 ID_De_Categoria_P INT,
 Unidad_De_Medida_P INT,
@@ -86,11 +111,9 @@ Descripcion_P Varchar (100),
 Stock_P INT,
 Punto_De_Pedido_P INT,
 URL_imagen_P Varchar (100),
-Precio_De_Compra_P DECIMAL(8,2),
-Precio_De_Venta_P DECIMAL(8,2),
+Porcentaje_De_Venta_P DECIMAL(8,2),
 Estado_P BIT DEFAULT 1
-CONSTRAINT PK_Productos PRIMARY KEY (ID_De_Proveedor_P,ID_Producto_P),
-CONSTRAINT FK_Productos_Proveedores FOREIGN KEY (ID_De_Proveedor_p) REFERENCES PROVEEDORES (ID_De_Proveedor_PV),
+CONSTRAINT PK_Productos PRIMARY KEY (ID_Producto_P),
 CONSTRAINT FK_Productos_Categorias FOREIGN KEY (ID_De_Categoria_P) REFERENCES CATEGORIAS (ID_Categoria_C),
 CONSTRAINT FK_Productos_UnidadesDeMedidas FOREIGN KEY (Unidad_De_Medida_P) REFERENCES UNIDADES_DE_MEDIDAS (ID_Medida_UM)
 )
@@ -98,25 +121,27 @@ GO
 
 --8
 CREATE TABLE DETALLE_DE_VENTAS(
-Posicion_De_Linea_DV INT,
 ID_Detalle_De_Venta_DV INT IDENTITY (1,1),
 ID_Venta_DV INT,
 ID_Producto_DV Varchar (100),
-ID_De_Proveedor_DV Varchar (100),
 Cantidad_DV INT,
 Precio_Unitario_DV DECIMAL(8,2)
-CONSTRAINT PK_DetalleDeVentas PRIMARY KEY (Posicion_De_Linea_DV,ID_Detalle_De_Venta_DV),
+CONSTRAINT PK_DetalleDeVentas PRIMARY KEY (ID_Detalle_De_Venta_DV),
 CONSTRAINT FK_DetalleDeVentas_Ventas FOREIGN KEY (ID_Venta_DV) REFERENCES VENTAS (ID_Venta_V),
-CONSTRAINT FK_DetalleDeVentas_Productos FOREIGN KEY (ID_De_Proveedor_DV,ID_Producto_DV) REFERENCES PRODUCTOS(ID_De_Proveedor_P,ID_Producto_P)
+CONSTRAINT FK_DetalleDeVentas_Productos FOREIGN KEY (ID_Producto_DV) REFERENCES PRODUCTOS(ID_Producto_P)
 )
 GO
 
 --9
 CREATE TABLE GASTOS(
 ID_Gastos_G INT IDENTITY (1,1),
+ID_Proveedor_G Varchar (100),
+ID_Usuario_G INT,
 Monto_Total_G DECIMAL(8,2),
 Fecha_Hora_G smalldatetime
-CONSTRAINT PK_Gastos PRIMARY KEY (ID_Gastos_G)
+CONSTRAINT PK_Gastos PRIMARY KEY (ID_Gastos_G),
+CONSTRAINT FK_Gastos_Proveedor FOREIGN KEY (ID_Proveedor_G) REFERENCES PROVEEDORES (ID_De_Proveedor_PV),
+CONSTRAINT FK_Gastos_Usuarios FOREIGN KEY (ID_Usuario_G) REFERENCES USUARIOS (ID_Usuario_U)
 )
 GO
 
@@ -125,50 +150,30 @@ CREATE TABLE DETALLE_DE_GASTOS(
 ID_Detalle_DG INT IDENTITY (1,1),
 ID_Gasto_DG INT,
 ID_Producto_DG Varchar (100),
-ID_De_Proveedor_DG Varchar (100),
 Cantidad_DG INT,
 Precio_Unitario_DG DECIMAL(8,2),
 CONSTRAINT PK_DetalleDeGastos PRIMARY KEY (ID_Detalle_DG),
 CONSTRAINT FK_DetalleDeGastos_Gastos FOREIGN KEY (ID_Gasto_DG) REFERENCES GASTOS (ID_Gastos_G),
-CONSTRAINT FK_DetalleDeGastos_Productos FOREIGN KEY (ID_De_Proveedor_DG,ID_Producto_DG) REFERENCES PRODUCTOS(ID_De_Proveedor_P,ID_Producto_P)
+CONSTRAINT FK_DetalleDeGastos_Productos FOREIGN KEY (ID_Producto_DG) REFERENCES PRODUCTOS(ID_Producto_P)
 )
 GO
 
---11
-CREATE TABLE TIPOS_DE_USUARIOS(
-ID_Tipo_De_Usuario_TU bit,
-Descripcion_TU Varchar (100),
-Estado_TU bit DEFAULT 1,
-CONSTRAINT PK_TipoDeUsuarios PRIMARY KEY (ID_Tipo_De_Usuario_TU)
-)
-GO
 
---12
-CREATE TABLE USUARIOS(
-ID_Usuario_U INT IDENTITY (1,1),
-DNI_U Varchar (100),
-Tipo_Usuario_U bit,
-Nombre_U Varchar (100),
-Apellido_U Varchar (100),
-Contraseña_U Varchar (100),
-Estado_U bit DEFAULT 1
-CONSTRAINT PK_Usuarios PRIMARY KEY (ID_Usuario_U),
-CONSTRAINT FK_Usuarios_TipoDeUsuario FOREIGN KEY (Tipo_Usuario_U) REFERENCES TIPOS_DE_USUARIOS (ID_Tipo_De_Usuario_TU),
-CONSTRAINT UQ_UsuariosDNI Unique (DNI_U)
-)
-GO
 
 --13
 CREATE TABLE CIERRES_DE_CAJAS(
-ID_Usuario_C INT,
 ID_De_Cierre_C INT IDENTITY (1,1),
+ID_Usuario_C INT,
 Monto_Inicio_C DECIMAL(8,2),
 Monto_Gastos_C DECIMAL(8,2),
-Efectivo_C DECIMAL(8,2),
-Tarjeta_C DECIMAL(8,2),
+Ganancia_En_Efectivo_C DECIMAL(8,2),
+Ganancia_En_Tarjeta_C DECIMAL(8,2),
+Ganancia_Total_C DECIMAL(8,2),
+Efectivo_En_Caja_C DECIMAL(8,2),
 Total_C DECIMAL(8,2),
+Arqueo_C DECIMAL(8,2),
 Fecha_Hora_C smalldatetime
-CONSTRAINT PK_CierresDeCajas PRIMARY KEY (ID_Usuario_C,ID_De_Cierre_C),
+CONSTRAINT PK_CierresDeCajas PRIMARY KEY (ID_De_Cierre_C),
 CONSTRAINT FK_CierresDeCajas_Usuarios FOREIGN KEY (ID_Usuario_C) REFERENCES USUARIOS (ID_Usuario_U)
 )
 GO
@@ -185,14 +190,20 @@ SELECT 1,'Harinas y Derivados',1
 INSERT INTO UNIDADES_DE_MEDIDAS (ID_Medida_UM,Descripcion_UM,Estado_UM)
 SELECT 1,'Gramos',1
 --PRODUCTOS
-INSERT INTO PRODUCTOS (ID_De_Proveedor_P,ID_Producto_P,ID_De_Categoria_P,Unidad_De_Medida_P,Descripcion_P,Stock_P,Punto_De_Pedido_P,URL_imagen_P,Precio_De_Compra_P,Precio_De_Venta_P,Estado_P)
-SELECT '1','1',1,1,'Fideos Luchetti Tallarin 500GR',15,7,'URL IMAGEN',50,100,1
+INSERT INTO PRODUCTOS (ID_Producto_P,ID_De_Categoria_P,Unidad_De_Medida_P,Descripcion_P,Stock_P,Punto_De_Pedido_P,URL_imagen_P,Porcentaje_De_Venta_P,Estado_P)
+SELECT '1',1,1,'Fideos Luchetti Tallarin 500GR',15,7,'URL IMAGEN',50,1
+--TIPOS DE USUARIOS
+INSERT INTO TIPOS_DE_USUARIOS (ID_Tipo_De_Usuario_TU,Descripcion_TU,Estado_TU)
+SELECT 1,'ADMINISTRADOR',1
+--USUARIOS
+INSERT INTO USUARIOS(DNI_U,Tipo_Usuario_U,Nombre_U,Apellido_U,Contraseña_U,Estado_U)
+SELECT '41578324',1,'Gabriel','Bettiga','123',1
 --GASTOS
-INSERT INTO GASTOS (Monto_Total_G,Fecha_Hora_G)
-SELECT 750,GETDATE()
+INSERT INTO GASTOS (ID_Proveedor_G,ID_Usuario_G,Monto_Total_G,Fecha_Hora_G)
+SELECT '1','1',750,GETDATE()
 --DETALLES DE GASTOS
-INSERT INTO DETALLE_DE_GASTOS (ID_Gasto_DG,ID_Producto_DG,ID_De_Proveedor_DG,Cantidad_DG,Precio_Unitario_DG)
-SELECT 1,'1','1',15,50
+INSERT INTO DETALLE_DE_GASTOS (ID_Gasto_DG,ID_Producto_DG,Cantidad_DG,Precio_Unitario_DG)
+SELECT 1,'1',15,50
 --LOCALES
 INSERT INTO LOCALES (ID_Local_L,Nombre_L,Direccion_L,Telefono_L,Informacion_Extra_L,Estado_L)
 SELECT 1,'Kiosco Lacteos Norte','La Ralde 458','1177889944','-',1
@@ -200,17 +211,11 @@ SELECT 1,'Kiosco Lacteos Norte','La Ralde 458','1177889944','-',1
 INSERT INTO METODO_DE_PAGO(ID_Metodo_MP,Descripcion_MP,Estado_MP)
 SELECT 1,'Efectivo',1
 --VENTAS
-INSERT INTO VENTAS (ID_Local_V,Metodo_De_Pago_V,Monto_Total_V,Fecha_Hora_V)
-SELECT 1,1,200,GETDATE()
+INSERT INTO VENTAS (ID_Local_V,Metodo_De_Pago_V,Monto_Total_V,ID_Usuario_V,Fecha_Hora_V)
+SELECT 1,1,200,1,GETDATE()
 --DETALLES DE VENTAS
-INSERT INTO DETALLE_DE_VENTAS (Posicion_De_Linea_DV,ID_Venta_DV,ID_Producto_DV,ID_De_Proveedor_DV,Cantidad_DV,Precio_Unitario_DV)
-SELECT 1,1,'1','1',2,100
---TIPOS DE USUARIOS
-INSERT INTO TIPOS_DE_USUARIOS (ID_Tipo_De_Usuario_TU,Descripcion_TU,Estado_TU)
-SELECT 1,'ADMINISTRADOR',1
---USUARIOS
-INSERT INTO USUARIOS(DNI_U,Tipo_Usuario_U,Nombre_U,Apellido_U,Contraseña_U,Estado_U)
-SELECT '41578324',1,'Gabriel','Bettiga','123',1
+INSERT INTO DETALLE_DE_VENTAS (ID_Venta_DV,ID_Producto_DV,Cantidad_DV,Precio_Unitario_DV)
+SELECT 1,'1',2,100
 --CIERRES DE CAJAS
-INSERT INTO CIERRES_DE_CAJAS(ID_Usuario_C,Monto_Inicio_C,Monto_Gastos_C,Efectivo_C,Tarjeta_C,Total_C,Fecha_Hora_C)
-SELECT 1,1000,750,200,0,200,GETDATE()
+INSERT INTO CIERRES_DE_CAJAS(ID_Usuario_C,Monto_Inicio_C,Monto_Gastos_C,Ganancia_En_Efectivo_C,Ganancia_En_Tarjeta_C,Ganancia_Total_C,Efectivo_En_Caja_C,Total_C,Arqueo_C,Fecha_Hora_C)
+SELECT 1,2000,500,200,700,400,1700,2400,-300,GETDATE()
