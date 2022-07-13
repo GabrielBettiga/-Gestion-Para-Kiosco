@@ -40,6 +40,7 @@ namespace Vistas.Forms
             // 
             // SUBpanel
             // 
+            this.SUBpanel.AutoScroll = true;
             this.SUBpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.SUBpanel.Controls.Add(this.panelMenu);
             this.SUBpanel.Dock = System.Windows.Forms.DockStyle.Fill;

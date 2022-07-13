@@ -32,9 +32,9 @@ namespace Vistas.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.SUBpanel = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelLogo = new System.Windows.Forms.Panel();
             this.btnHistorialDeCompra = new FontAwesome.Sharp.IconButton();
             this.btnCargarCompra = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SUBpanel.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -52,6 +52,7 @@ namespace Vistas.Forms
             // 
             // SUBpanel
             // 
+            this.SUBpanel.AutoScroll = true;
             this.SUBpanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.SUBpanel.Controls.Add(this.panelMenu);
             this.SUBpanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -71,15 +72,6 @@ namespace Vistas.Forms
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 450);
             this.panelMenu.TabIndex = 1;
-            // 
-            // panelLogo
-            // 
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.panelLogo.Size = new System.Drawing.Size(220, 175);
-            this.panelLogo.TabIndex = 1;
             // 
             // btnHistorialDeCompra
             // 
@@ -124,6 +116,15 @@ namespace Vistas.Forms
             this.btnCargarCompra.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCargarCompra.UseVisualStyleBackColor = true;
             this.btnCargarCompra.Click += new System.EventHandler(this.btnCargarCompra_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.panelLogo.Size = new System.Drawing.Size(220, 175);
+            this.panelLogo.TabIndex = 1;
             // 
             // Compras
             // 
