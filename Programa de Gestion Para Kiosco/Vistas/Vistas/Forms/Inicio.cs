@@ -25,6 +25,8 @@ namespace Vistas
         public BTNinicio()
         {
             InitializeComponent();
+           
+
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
@@ -33,6 +35,8 @@ namespace Vistas
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+            this.DoubleBuffered = true;
         }
 
         private void ActivateButton (object senderBtn, Color color)
@@ -77,7 +81,8 @@ namespace Vistas
 
         private void AbrirFormHijo(Form FomHijo)
         {
-            if(FormHijoActual != null)
+            
+            if (FormHijoActual != null)
             {
                 //open only form
                 FormHijoActual.Close();
@@ -106,36 +111,42 @@ namespace Vistas
         //Menu Button_Clicks
         private void BRNproductos_Click(object sender, EventArgs e)
         {
+            
             ActivateButton(sender, RGBColors.color1);
            AbrirFormHijo(new Forms.Productos());
         }
 
         private void BTNcompras_Click(object sender, EventArgs e)
         {
+            
             ActivateButton(sender, RGBColors.color2);
             AbrirFormHijo(new Forms.Compras());
         }
 
         private void BTNempleados_Click(object sender, EventArgs e)
         {
+           
             ActivateButton(sender, RGBColors.color3);
             AbrirFormHijo(new Forms.Empleados());
         }
 
         private void BTNventas_Click(object sender, EventArgs e)
         {
+           
             ActivateButton(sender, RGBColors.color4);
             AbrirFormHijo(new Forms.Ventas());
         }
 
         private void BTNreportes_Click(object sender, EventArgs e)
         {
+            
             ActivateButton(sender, RGBColors.color5);
             AbrirFormHijo(new Forms.Reportes());
         }
 
         private void BTNconfiguracion_Click(object sender, EventArgs e)
         {
+            
             ActivateButton(sender, RGBColors.color6);
             AbrirFormHijo(new Forms.Configuracion());
         }
@@ -198,5 +209,47 @@ namespace Vistas
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+
+        //RESIZE METODO PARA REDIMENCIONAR/CAMBIAR TAMAÑO A FORMULARIO EN TIEMPO DE EJECUCION ----------------------------------------------------------
+        private int tolerance = 12;
+        private const int WM_NCHITTEST = 132;
+        private const int HTBOTTOMRIGHT = 17;
+        private Rectangle sizeGripRectangle;
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case WM_NCHITTEST:
+                    base.WndProc(ref m);
+                    var hitPoint = this.PointToClient(new Point(m.LParam.ToInt32() & 0xffff, m.LParam.ToInt32() >> 16));
+                    if (sizeGripRectangle.Contains(hitPoint))
+                        m.Result = new IntPtr(HTBOTTOMRIGHT);
+                    break;
+                default:
+                    base.WndProc(ref m);
+                    break;
+            }
+        }
+
+        //----------------DIBUJAR RECTANGULO / EXCLUIR ESQUINA PANEL 
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            var region = new Region(new Rectangle(0, 0, this.ClientRectangle.Width, this.ClientRectangle.Height));
+            sizeGripRectangle = new Rectangle(this.ClientRectangle.Width - tolerance, this.ClientRectangle.Height - tolerance, tolerance, tolerance);
+            region.Exclude(sizeGripRectangle);
+            this.PanelEscritorio.Region = region;
+            this.Invalidate();
+        }
+        //----------------COLOR Y GRIP DE RECTANGULO INFERIOR
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            SolidBrush blueBrush = new SolidBrush(Color.FromArgb(244, 244, 244));
+            e.Graphics.FillRectangle(blueBrush, sizeGripRectangle);
+            base.OnPaint(e);
+            ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
+        }
+
     }
 }

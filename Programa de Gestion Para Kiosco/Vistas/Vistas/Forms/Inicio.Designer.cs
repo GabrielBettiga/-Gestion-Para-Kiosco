@@ -30,6 +30,7 @@ namespace Vistas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BTNinicio));
+            this.PanelEscritorio = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.BTNconfiguracion = new FontAwesome.Sharp.IconButton();
             this.BTNreportes = new FontAwesome.Sharp.IconButton();
@@ -47,17 +48,35 @@ namespace Vistas
             this.LBLtitulo = new System.Windows.Forms.Label();
             this.IconoDeFormularioActual = new FontAwesome.Sharp.IconPictureBox();
             this.PanelSombra = new System.Windows.Forms.Panel();
-            this.PanelEscritorio = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PanelEscritorio.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconoDeFormularioActual)).BeginInit();
-            this.PanelEscritorio.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
+            // 
+            // PanelEscritorio
+            // 
+            this.PanelEscritorio.BackColor = System.Drawing.Color.Maroon;
+            this.PanelEscritorio.Controls.Add(this.panel2);
+            this.PanelEscritorio.Controls.Add(this.panel1);
+            this.PanelEscritorio.Controls.Add(this.PanelSombra);
+            this.PanelEscritorio.Controls.Add(this.panelTitulo);
+            this.PanelEscritorio.Controls.Add(this.panelMenu);
+            this.PanelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelEscritorio.ForeColor = System.Drawing.Color.Maroon;
+            this.PanelEscritorio.Location = new System.Drawing.Point(0, 0);
+            this.PanelEscritorio.Name = "PanelEscritorio";
+            this.PanelEscritorio.Size = new System.Drawing.Size(1199, 631);
+            this.PanelEscritorio.TabIndex = 0;
             // 
             // panelMenu
             // 
@@ -73,7 +92,7 @@ namespace Vistas
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 631);
-            this.panelMenu.TabIndex = 0;
+            this.panelMenu.TabIndex = 2;
             // 
             // BTNconfiguracion
             // 
@@ -226,7 +245,6 @@ namespace Vistas
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelTitulo
             // 
@@ -241,8 +259,7 @@ namespace Vistas
             this.panelTitulo.Location = new System.Drawing.Point(220, 0);
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(979, 75);
-            this.panelTitulo.TabIndex = 1;
-            this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
+            this.panelTitulo.TabIndex = 3;
             // 
             // BTNrestaurar
             // 
@@ -359,34 +376,54 @@ namespace Vistas
             this.PanelSombra.Location = new System.Drawing.Point(220, 75);
             this.PanelSombra.Name = "PanelSombra";
             this.PanelSombra.Size = new System.Drawing.Size(979, 9);
-            this.PanelSombra.TabIndex = 2;
-            // 
-            // PanelEscritorio
-            // 
-            this.PanelEscritorio.AutoScroll = true;
-            this.PanelEscritorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.PanelEscritorio.Controls.Add(this.panel1);
-            this.PanelEscritorio.Controls.Add(this.pictureBox2);
-            this.PanelEscritorio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelEscritorio.Location = new System.Drawing.Point(220, 84);
-            this.PanelEscritorio.Name = "PanelEscritorio";
-            this.PanelEscritorio.Size = new System.Drawing.Size(979, 547);
-            this.PanelEscritorio.TabIndex = 3;
+            this.PanelSombra.TabIndex = 5;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(220, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(9, 547);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 6;
+            // 
+            // panel2
+            // 
+            this.panel2.AutoScroll = true;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.panel2.Location = new System.Drawing.Point(229, 84);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(970, 547);
+            this.panel2.TabIndex = 7;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(9, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(961, 9);
+            this.panel3.TabIndex = 4;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(9, 547);
+            this.panel4.TabIndex = 3;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(317, 132);
+            this.pictureBox2.Location = new System.Drawing.Point(313, 132);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(294, 200);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -399,19 +436,17 @@ namespace Vistas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1199, 631);
             this.Controls.Add(this.PanelEscritorio);
-            this.Controls.Add(this.PanelSombra);
-            this.Controls.Add(this.panelTitulo);
-            this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "BTNinicio";
             this.Text = "Inicio";
+            this.PanelEscritorio.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IconoDeFormularioActual)).EndInit();
-            this.PanelEscritorio.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -419,25 +454,28 @@ namespace Vistas
 
         #endregion
 
+        private System.Windows.Forms.Panel PanelEscritorio;
         private System.Windows.Forms.Panel panelMenu;
-        private FontAwesome.Sharp.IconButton BRNproductos;
-        private System.Windows.Forms.Panel panelLogo;
+        private FontAwesome.Sharp.IconButton BTNconfiguracion;
         private FontAwesome.Sharp.IconButton BTNreportes;
         private FontAwesome.Sharp.IconButton BTNventas;
         private FontAwesome.Sharp.IconButton BTNempleados;
         private FontAwesome.Sharp.IconButton BTNcompras;
+        private FontAwesome.Sharp.IconButton BRNproductos;
+        private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panelTitulo;
-        private FontAwesome.Sharp.IconPictureBox IconoDeFormularioActual;
-        private System.Windows.Forms.Label LBLtitulo;
-        private System.Windows.Forms.Panel PanelSombra;
-        private System.Windows.Forms.Panel PanelEscritorio;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconButton BTNconfiguracion;
-        private FontAwesome.Sharp.IconButton BTNminimizar;
-        private FontAwesome.Sharp.IconButton BTNmaximizar;
-        private FontAwesome.Sharp.IconButton BTNcerrar;
         private FontAwesome.Sharp.IconButton BTNrestaurar;
+        private FontAwesome.Sharp.IconButton BTNcerrar;
+        private FontAwesome.Sharp.IconButton BTNmaximizar;
+        private FontAwesome.Sharp.IconButton BTNminimizar;
+        private System.Windows.Forms.Label LBLtitulo;
+        private FontAwesome.Sharp.IconPictureBox IconoDeFormularioActual;
+        private System.Windows.Forms.Panel PanelSombra;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
