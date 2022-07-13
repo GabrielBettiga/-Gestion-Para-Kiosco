@@ -32,51 +32,31 @@ namespace Vistas.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarVenta));
             this.SUBpanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.COD_Producto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel7 = new System.Windows.Forms.Panel();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.SUBpanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // SUBpanel
@@ -92,9 +72,6 @@ namespace Vistas.Forms
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.panel3);
-            this.flowLayoutPanel1.Controls.Add(this.panel4);
-            this.flowLayoutPanel1.Controls.Add(this.panel5);
             this.flowLayoutPanel1.Controls.Add(this.panel6);
             this.flowLayoutPanel1.Controls.Add(this.panel7);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -103,42 +80,9 @@ namespace Vistas.Forms
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1159, 572);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.listView1);
-            this.panel3.Controls.Add(this.textBox1);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(3, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(415, 329);
-            this.panel3.TabIndex = 1;
-            // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.COD_Producto,
-            this.Descripcion});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 82);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(391, 146);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // COD_Producto
-            // 
-            this.COD_Producto.Text = "COD_Producto";
-            this.COD_Producto.Width = 170;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.Text = "Descripcion";
-            this.Descripcion.Width = 113;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 42);
+            this.textBox1.Location = new System.Drawing.Point(275, 61);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(391, 22);
             this.textBox1.TabIndex = 1;
@@ -147,154 +91,11 @@ namespace Vistas.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Location = new System.Drawing.Point(272, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo o descripcion del producto";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.iconButton1);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Controls.Add(this.numericUpDown1);
-            this.panel4.Controls.Add(this.textBox6);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Controls.Add(this.textBox5);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.textBox4);
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Controls.Add(this.textBox2);
-            this.panel4.Controls.Add(this.label2);
-            this.panel4.Location = new System.Drawing.Point(424, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(446, 332);
-            this.panel4.TabIndex = 2;
-            // 
-            // iconButton1
-            // 
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Lime;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(38, 275);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(371, 39);
-            this.iconButton1.TabIndex = 12;
-            this.iconButton1.Text = "+ Agregar";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(291, 176);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 17);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Stock:";
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(2, 207);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(84, 22);
-            this.numericUpDown1.TabIndex = 10;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(126, 206);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(80, 22);
-            this.textBox6.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(125, 176);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Precio:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(294, 206);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(124, 22);
-            this.textBox5.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(0, 176);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 17);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Cantidad:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(276, 137);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(142, 22);
-            this.textBox4.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label4.Location = new System.Drawing.Point(273, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Medida:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(2, 137);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(204, 22);
-            this.textBox3.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(2, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Categoria:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(3, 66);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(427, 22);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(-1, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 17);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Descripcion del producto:";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.iconPictureBox1);
-            this.panel5.Location = new System.Drawing.Point(876, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(236, 332);
-            this.panel5.TabIndex = 3;
             // 
             // iconPictureBox1
             // 
@@ -305,7 +106,7 @@ namespace Vistas.Forms
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 208;
-            this.iconPictureBox1.Location = new System.Drawing.Point(13, 12);
+            this.iconPictureBox1.Location = new System.Drawing.Point(26, 23);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(208, 317);
             this.iconPictureBox1.TabIndex = 0;
@@ -313,10 +114,16 @@ namespace Vistas.Forms
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.numericUpDown1);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.iconPictureBox1);
+            this.panel6.Controls.Add(this.textBox1);
             this.panel6.Controls.Add(this.listView2);
-            this.panel6.Location = new System.Drawing.Point(3, 341);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(3, 3);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(811, 240);
+            this.panel6.Size = new System.Drawing.Size(1159, 365);
             this.panel6.TabIndex = 4;
             // 
             // listView2
@@ -325,7 +132,7 @@ namespace Vistas.Forms
             this.columnHeader1,
             this.columnHeader2});
             this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(6, 15);
+            this.listView2.Location = new System.Drawing.Point(275, 118);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(779, 222);
             this.listView2.TabIndex = 3;
@@ -353,10 +160,45 @@ namespace Vistas.Forms
             this.panel7.Controls.Add(this.label10);
             this.panel7.Controls.Add(this.textBox7);
             this.panel7.Controls.Add(this.label8);
-            this.panel7.Location = new System.Drawing.Point(820, 341);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel7.Location = new System.Drawing.Point(3, 374);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(292, 237);
+            this.panel7.Size = new System.Drawing.Size(1159, 237);
             this.panel7.TabIndex = 5;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(93, 152);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(184, 22);
+            this.textBox10.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label11.Location = new System.Drawing.Point(4, 152);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(63, 17);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Cambio :";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(93, 113);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(184, 22);
+            this.textBox8.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label9.Location = new System.Drawing.Point(4, 118);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 17);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Pago Con :";
             // 
             // iconButton2
             // 
@@ -405,39 +247,22 @@ namespace Vistas.Forms
             this.label8.TabIndex = 13;
             this.label8.Text = "SubTotal :";
             // 
-            // textBox8
+            // label2
             // 
-            this.textBox8.Location = new System.Drawing.Point(93, 113);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(184, 22);
-            this.textBox8.TabIndex = 19;
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(722, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Cantidad";
             // 
-            // label9
+            // numericUpDown1
             // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label9.Location = new System.Drawing.Point(4, 118);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(78, 17);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Pago Con :";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(93, 152);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(184, 22);
-            this.textBox10.TabIndex = 21;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label11.Location = new System.Drawing.Point(4, 152);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 17);
-            this.label11.TabIndex = 20;
-            this.label11.Text = "Cambio :";
+            this.numericUpDown1.Location = new System.Drawing.Point(725, 62);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(61, 22);
+            this.numericUpDown1.TabIndex = 5;
             // 
             // CargarVenta
             // 
@@ -450,16 +275,12 @@ namespace Vistas.Forms
             this.Text = "CargarVenta";
             this.SUBpanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -468,27 +289,8 @@ namespace Vistas.Forms
 
         private System.Windows.Forms.Panel SUBpanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader COD_Producto;
-        private System.Windows.Forms.ColumnHeader Descripcion;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel4;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel5;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ListView listView2;
@@ -504,5 +306,7 @@ namespace Vistas.Forms
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
