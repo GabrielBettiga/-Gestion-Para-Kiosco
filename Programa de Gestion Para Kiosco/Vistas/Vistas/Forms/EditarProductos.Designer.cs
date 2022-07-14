@@ -31,9 +31,9 @@ namespace Vistas.Forms
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.BTN_ANTERIOR = new System.Windows.Forms.Button();
             this.BTN_SIGUIENTE = new System.Windows.Forms.Button();
+            this.BTN_ANTERIOR = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -62,13 +62,21 @@ namespace Vistas.Forms
             this.panel2.Size = new System.Drawing.Size(920, 462);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView2
+            // BTN_SIGUIENTE
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(96, 67);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(742, 271);
-            this.dataGridView2.TabIndex = 2;
+            this.BTN_SIGUIENTE.BackColor = System.Drawing.Color.SteelBlue;
+            this.BTN_SIGUIENTE.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTN_SIGUIENTE.FlatAppearance.BorderSize = 0;
+            this.BTN_SIGUIENTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BTN_SIGUIENTE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTN_SIGUIENTE.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.BTN_SIGUIENTE.Location = new System.Drawing.Point(536, 388);
+            this.BTN_SIGUIENTE.Name = "BTN_SIGUIENTE";
+            this.BTN_SIGUIENTE.Size = new System.Drawing.Size(103, 42);
+            this.BTN_SIGUIENTE.TabIndex = 4;
+            this.BTN_SIGUIENTE.Text = "SIGUIENTE";
+            this.BTN_SIGUIENTE.UseVisualStyleBackColor = false;
+            this.BTN_SIGUIENTE.Click += new System.EventHandler(this.BTN_SIGUIENTE_Click);
             // 
             // BTN_ANTERIOR
             // 
@@ -78,7 +86,7 @@ namespace Vistas.Forms
             this.BTN_ANTERIOR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BTN_ANTERIOR.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BTN_ANTERIOR.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BTN_ANTERIOR.Location = new System.Drawing.Point(309, 359);
+            this.BTN_ANTERIOR.Location = new System.Drawing.Point(295, 388);
             this.BTN_ANTERIOR.Name = "BTN_ANTERIOR";
             this.BTN_ANTERIOR.Size = new System.Drawing.Size(103, 42);
             this.BTN_ANTERIOR.TabIndex = 3;
@@ -86,21 +94,13 @@ namespace Vistas.Forms
             this.BTN_ANTERIOR.UseVisualStyleBackColor = false;
             this.BTN_ANTERIOR.Click += new System.EventHandler(this.BTN_ANTERIOR_Click);
             // 
-            // BTN_SIGUIENTE
+            // dataGridView2
             // 
-            this.BTN_SIGUIENTE.BackColor = System.Drawing.Color.SteelBlue;
-            this.BTN_SIGUIENTE.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTN_SIGUIENTE.FlatAppearance.BorderSize = 0;
-            this.BTN_SIGUIENTE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BTN_SIGUIENTE.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTN_SIGUIENTE.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.BTN_SIGUIENTE.Location = new System.Drawing.Point(534, 359);
-            this.BTN_SIGUIENTE.Name = "BTN_SIGUIENTE";
-            this.BTN_SIGUIENTE.Size = new System.Drawing.Size(103, 42);
-            this.BTN_SIGUIENTE.TabIndex = 4;
-            this.BTN_SIGUIENTE.Text = "SIGUIENTE";
-            this.BTN_SIGUIENTE.UseVisualStyleBackColor = false;
-            this.BTN_SIGUIENTE.Click += new System.EventHandler(this.BTN_SIGUIENTE_Click);
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(60, 59);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(812, 305);
+            this.dataGridView2.TabIndex = 2;
             // 
             // EditarProductos
             // 

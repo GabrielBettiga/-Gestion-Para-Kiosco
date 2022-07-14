@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using DAO;
+using Entidades;
 
 namespace Negocios
 {
     public class NegocioProductos
     {
-        public DataTable getListaPeoductos()
+        DAOProductos daopro = new DAOProductos();
+
+        public DataSet ListarClientes(Paginacion obj)
         {
-            DAOProductos dao = new DAOProductos();
-            return dao.getListaPeoductos();
+            return daopro.ListarClientes(obj);
         }
 
         //public bool EliminarSucursal(int id)

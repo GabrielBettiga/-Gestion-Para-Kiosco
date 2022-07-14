@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using Entidades;
 
 namespace DAO
 {
@@ -13,6 +14,13 @@ namespace DAO
         AccesoDatos conexion = new AccesoDatos();
 
         AccesoDatos ds = new AccesoDatos();
+
+        public DataSet ListarClientes(Paginacion obj)
+        {
+            return ds.EjecutarProcedimientoAlmacenadoData(obj);
+
+        }
+
         //public Sucursales getSucursal(Sucursales suc)
         //{
         //    DataTable tabla = ds.ObtenerTabla("Sucursal", "SELECT * FROM Sucursal WHERE Id_Sucursal=" + suc.IdSucursal);
@@ -26,11 +34,11 @@ namespace DAO
         //    string consulta = "SELECT * FROM Sucursal WHERE NombreSucursal = '" + suc.NombreSucursal + "'";
         //    return ds.Existe(consulta);
         //}
-        public DataTable getListaPeoductos()
-        {
-            DataTable tabla = ds.ObtenerTabla("Productos", "SELECT ID_Producto_P AS [Codigo Producto], Descripcion_P AS [Descripcion], Categoria_P AS [Categoria], Stock_P AS [Stock], Punto_De_Pedido_P AS [Punto Pedido], Porcentaje_De_Venta_P AS [Porcentaje de Venta], Estado_P AS [Estado] FROM Productos");
-            return tabla;
-        }
+        //public DataTable getListaPeoductos()
+        //{
+        //    DataTable tabla = ds.ObtenerTabla("Productos", "SELECT ID_Producto_P AS [Codigo Producto], Descripcion_P AS [Descripcion], Categoria_P AS [Categoria], Stock_P AS [Stock], Punto_De_Pedido_P AS [Punto Pedido], Porcentaje_De_Venta_P AS [Porcentaje de Venta], Estado_P AS [Estado] FROM Productos");
+        //    return tabla;
+        //}
 
         //public int EliminarSucursal(Sucursales suc)
         //{
