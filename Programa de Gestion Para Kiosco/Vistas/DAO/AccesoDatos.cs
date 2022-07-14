@@ -52,7 +52,7 @@ namespace DAO
             DataSet ds = new DataSet();
             SqlConnection cn = ObtenerConexion();
             SqlDataAdapter adapter = ObtenerAdapter(consultaSql, cn);
-            adapter.Fill(ds, nombreTabla);
+            adapter.Fill(ds,5,10, nombreTabla);
             cn.Close();
             return ds.Tables[nombreTabla];
         }
