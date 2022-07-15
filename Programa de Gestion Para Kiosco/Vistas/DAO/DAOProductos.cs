@@ -15,9 +15,10 @@ namespace DAO
 
         AccesoDatos ds = new AccesoDatos();
 
-        public DataSet ListarClientes(Paginacion obj)
+        public DataTable ListarProductos(Paginacion obj)
         {
-            return ds.EjecutarProcedimientoAlmacenadoData(obj);
+            DataTable tabla = ds.ObtenerTabla("Productos", "SELECT * FROM PRODUCTOS WHERE  Numero_P between 1 and 10");
+            return tabla;
 
         }
 

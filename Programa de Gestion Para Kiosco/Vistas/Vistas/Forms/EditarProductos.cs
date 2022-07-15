@@ -17,7 +17,6 @@ namespace Vistas.Forms
     {
         NegocioProductos negpro = new NegocioProductos();
         Paginacion obj = new Paginacion();
-        DataSet dsTabla;
 
         int varPagInicio = 1;
         int varPagIndice = 0;
@@ -33,9 +32,7 @@ namespace Vistas.Forms
         {
             obj.VarDatoInicio1 = varPagInicio;
             obj.VarDatoFin1 = varPagFinal;
-            dsTabla = negpro.ListarClientes(obj);
-
-            dataGridView2.DataSource = dsTabla.Tables[0];
+            dataGridView2.DataSource=negpro.ListarProductos(obj);
         }
 
         private void BTN_SIGUIENTE_Click(object sender, EventArgs e)
@@ -44,9 +41,7 @@ namespace Vistas.Forms
             varPagFinal += 10;
             obj.VarDatoInicio1 = varPagInicio;
             obj.VarDatoFin1 = varPagFinal;
-            dsTabla = negpro.ListarClientes(obj);
-
-            dataGridView2.DataSource = dsTabla.Tables[0];
+            dataGridView2.DataSource = negpro.ListarProductos(obj);
         }
 
         private void BTN_ANTERIOR_Click(object sender, EventArgs e)
@@ -55,9 +50,7 @@ namespace Vistas.Forms
             varPagFinal -= 10;
             obj.VarDatoInicio1 = varPagInicio;
             obj.VarDatoFin1 = varPagFinal;
-            dsTabla = negpro.ListarClientes(obj);
-
-            dataGridView2.DataSource = dsTabla.Tables[0];
+            dataGridView2.DataSource = negpro.ListarProductos(obj);
         }
     }
 }

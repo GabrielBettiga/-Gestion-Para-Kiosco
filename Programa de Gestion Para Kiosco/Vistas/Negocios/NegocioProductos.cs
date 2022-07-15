@@ -13,9 +13,10 @@ namespace Negocios
     {
         DAOProductos daopro = new DAOProductos();
 
-        public DataSet ListarClientes(Paginacion obj)
+        public DataTable ListarProductos(Paginacion obj)
         {
-            return daopro.ListarClientes(obj);
+            DAOProductos dao = new DAOProductos();
+            return dao.ListarProductos(obj);
         }
 
         //public bool EliminarSucursal(int id)

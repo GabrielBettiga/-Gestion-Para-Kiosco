@@ -70,19 +70,6 @@ namespace DAO
             cn.Close();
             return filasCambiadas;
         }
-        public DataSet EjecutarProcedimientoAlmacenadoData(Paginacion obj)
-        {
-            SqlConnection cn = new SqlConnection(rutaBDSucursales);
-            SqlCommand cmd = new SqlCommand("sp_listar_productos", cn);
-            cmd.CommandTimeout = 1000;
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@tab_inicio", obj.VarDatoInicio1);
-            cmd.Parameters.AddWithValue("@tab_final", obj.VarDatoFin1);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataSet dt = new DataSet();
-            da.Fill(dt);
-            return dt;
-        }
         public Boolean Existe(String consultaSql)
         {
             Boolean estado = false;
