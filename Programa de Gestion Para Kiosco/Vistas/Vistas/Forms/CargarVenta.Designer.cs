@@ -32,13 +32,12 @@ namespace Vistas.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarVenta));
             this.SUBpanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.numericUpDown_CANTIDAD_PRODUCTO = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.TXT_CODIGO_PRODUCTO = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -49,14 +48,15 @@ namespace Vistas.Forms
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.GridView_productosXcomprar = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.SUBpanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CANTIDAD_PRODUCTO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_productosXcomprar)).BeginInit();
             this.SuspendLayout();
             // 
             // SUBpanel
@@ -80,22 +80,38 @@ namespace Vistas.Forms
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1159, 572);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // textBox1
+            // panel6
             // 
-            this.textBox1.Location = new System.Drawing.Point(275, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(391, 22);
-            this.textBox1.TabIndex = 1;
+            this.panel6.Controls.Add(this.button1);
+            this.panel6.Controls.Add(this.GridView_productosXcomprar);
+            this.panel6.Controls.Add(this.numericUpDown_CANTIDAD_PRODUCTO);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.iconPictureBox1);
+            this.panel6.Controls.Add(this.TXT_CODIGO_PRODUCTO);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(3, 3);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1159, 365);
+            this.panel6.TabIndex = 4;
             // 
-            // label1
+            // numericUpDown_CANTIDAD_PRODUCTO
             // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(272, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo o descripcion del producto";
+            this.numericUpDown_CANTIDAD_PRODUCTO.Location = new System.Drawing.Point(725, 62);
+            this.numericUpDown_CANTIDAD_PRODUCTO.Name = "numericUpDown_CANTIDAD_PRODUCTO";
+            this.numericUpDown_CANTIDAD_PRODUCTO.Size = new System.Drawing.Size(61, 22);
+            this.numericUpDown_CANTIDAD_PRODUCTO.TabIndex = 5;
+            this.numericUpDown_CANTIDAD_PRODUCTO.Enter += new System.EventHandler(this.numericUpDown_CANTIDAD_PRODUCTO_Enter);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label2.Location = new System.Drawing.Point(722, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Cantidad";
             // 
             // iconPictureBox1
             // 
@@ -112,42 +128,22 @@ namespace Vistas.Forms
             this.iconPictureBox1.TabIndex = 0;
             this.iconPictureBox1.TabStop = false;
             // 
-            // panel6
+            // TXT_CODIGO_PRODUCTO
             // 
-            this.panel6.Controls.Add(this.numericUpDown1);
-            this.panel6.Controls.Add(this.label2);
-            this.panel6.Controls.Add(this.iconPictureBox1);
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Controls.Add(this.listView2);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(3, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1159, 365);
-            this.panel6.TabIndex = 4;
+            this.TXT_CODIGO_PRODUCTO.Location = new System.Drawing.Point(275, 61);
+            this.TXT_CODIGO_PRODUCTO.Name = "TXT_CODIGO_PRODUCTO";
+            this.TXT_CODIGO_PRODUCTO.Size = new System.Drawing.Size(391, 22);
+            this.TXT_CODIGO_PRODUCTO.TabIndex = 1;
             // 
-            // listView2
+            // label1
             // 
-            this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2});
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(275, 118);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(779, 222);
-            this.listView2.TabIndex = 3;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            this.listView2.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "COD_Producto";
-            this.columnHeader1.Width = 170;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Descripcion";
-            this.columnHeader2.Width = 113;
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label1.Location = new System.Drawing.Point(272, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(132, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo de producto";
             // 
             // panel7
             // 
@@ -247,22 +243,25 @@ namespace Vistas.Forms
             this.label8.TabIndex = 13;
             this.label8.Text = "SubTotal :";
             // 
-            // label2
+            // GridView_productosXcomprar
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(722, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 17);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Cantidad";
+            this.GridView_productosXcomprar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_productosXcomprar.Location = new System.Drawing.Point(306, 115);
+            this.GridView_productosXcomprar.Name = "GridView_productosXcomprar";
+            this.GridView_productosXcomprar.RowHeadersWidth = 51;
+            this.GridView_productosXcomprar.RowTemplate.Height = 24;
+            this.GridView_productosXcomprar.Size = new System.Drawing.Size(680, 198);
+            this.GridView_productosXcomprar.TabIndex = 6;
             // 
-            // numericUpDown1
+            // button1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(725, 62);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(61, 22);
-            this.numericUpDown1.TabIndex = 5;
+            this.button1.Location = new System.Drawing.Point(826, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.numericUpDown_CANTIDAD_PRODUCTO_Enter);
             // 
             // CargarVenta
             // 
@@ -275,12 +274,13 @@ namespace Vistas.Forms
             this.Text = "CargarVenta";
             this.SUBpanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CANTIDAD_PRODUCTO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_productosXcomprar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,13 +289,10 @@ namespace Vistas.Forms
 
         private System.Windows.Forms.Panel SUBpanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXT_CODIGO_PRODUCTO;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Panel panel7;
         private FontAwesome.Sharp.IconButton iconButton2;
         private System.Windows.Forms.TextBox textBox9;
@@ -307,6 +304,8 @@ namespace Vistas.Forms
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericUpDown_CANTIDAD_PRODUCTO;
+        private System.Windows.Forms.DataGridView GridView_productosXcomprar;
+        private System.Windows.Forms.Button button1;
     }
 }

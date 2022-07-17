@@ -22,6 +22,13 @@ namespace DAO
 
         }
 
+        public DataTable BuscarProductoPorID(string ID)
+        {
+            DataTable tabla = ds.ObtenerTabla("PRODUCTOS", "Select Numero_P, Descripcion_P FROM PRODUCTOS WHERE ID_Producto_P = '" + ID + "'");
+            return tabla;
+
+        }
+
         //public Sucursales getSucursal(Sucursales suc)
         //{
         //    DataTable tabla = ds.ObtenerTabla("Sucursal", "SELECT * FROM Sucursal WHERE Id_Sucursal=" + suc.IdSucursal);

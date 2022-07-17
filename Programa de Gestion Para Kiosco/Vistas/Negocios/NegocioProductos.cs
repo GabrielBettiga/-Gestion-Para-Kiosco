@@ -19,6 +19,12 @@ namespace Negocios
             return dao.ListarProductos(obj);
         }
 
+        public DataTable BuscarProductoPorID(string ID)
+        {
+            DAOProductos dao = new DAOProductos();
+            return dao.BuscarProductoPorID(ID);
+        }
+
         //public bool EliminarSucursal(int id)
         //{
         //    DaoSucursales dao = new DaoSucursales();
