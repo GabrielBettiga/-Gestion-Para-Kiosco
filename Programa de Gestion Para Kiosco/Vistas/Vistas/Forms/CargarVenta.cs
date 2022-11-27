@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocios;
+using Entidades;
 
 namespace Vistas.Forms
 {
@@ -34,5 +35,19 @@ namespace Vistas.Forms
             
             
         }
+
+        /*private void TXT_CODIGO_PRODUCTO_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData == Keys.Enter)
+            {
+                Producto pro = new Producto();
+                NegocioProductos negpro = new NegocioProductos();
+                DataTable tabla_producto = negpro.BuscarProductoPorID(TXT_CODIGO_PRODUCTO.Text);
+                bool producto_existe = false;
+
+                
+
+            }
+        }*/
     }
 }

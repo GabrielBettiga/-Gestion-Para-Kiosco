@@ -15,6 +15,14 @@ namespace DAO
 
         AccesoDatos ds = new AccesoDatos();
 
+
+        public int AgregarProducto(Producto producto)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosFuncionAgregar(ref comando, producto);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarProducto");
+        }
+
         public DataTable ListarProductos    (Paginacion obj)
         {
             DataTable tabla = ds.ObtenerTabla("Productos", "SELECT * FROM PRODUCTOS WHERE  Numero_P between "+obj.VarDatoInicio1+" and "+obj.VarDatoFin1);
@@ -24,58 +32,31 @@ namespace DAO
 
         public DataTable BuscarProductoPorID(string ID)
         {
-            DataTable tabla = ds.ObtenerTabla("PRODUCTOS", "Select Numero_P, Descripcion_P FROM PRODUCTOS WHERE ID_Producto_P = '" + ID + "'");
+            DataTable tabla = ds.ObtenerTabla("PRODUCTOS", "Select ID_Producto_P, Categoria_P, Descripcion_P, Stock_P, Punto_De_Pedido_P, Porcentaje_De_Venta_P, Estado_P  FROM PRODUCTOS WHERE ID_Producto_P = '" + ID + "'");
             return tabla;
 
         }
 
-        //public Sucursales getSucursal(Sucursales suc)
-        //{
-        //    DataTable tabla = ds.ObtenerTabla("Sucursal", "SELECT * FROM Sucursal WHERE Id_Sucursal=" + suc.IdSucursal);
-        //    suc.IdSucursal = Convert.ToInt32(tabla.Rows[0][0].ToString());
-        //    suc.NombreSucursal = (tabla.Rows[0][1].ToString());
-        //    suc.DescripcionSucursal = (tabla.Rows[0][2].ToString());
-        //    return suc;
-        //}
-        //public Boolean ExisteSucursal(Sucursales suc)
-        //{
-        //    string consulta = "SELECT * FROM Sucursal WHERE NombreSucursal = '" + suc.NombreSucursal + "'";
-        //    return ds.Existe(consulta);
-        //}
-        //public DataTable getListaPeoductos()
-        //{
-        //    DataTable tabla = ds.ObtenerTabla("Productos", "SELECT ID_Producto_P AS [Codigo Producto], Descripcion_P AS [Descripcion], Categoria_P AS [Categoria], Stock_P AS [Stock], Punto_De_Pedido_P AS [Punto Pedido], Porcentaje_De_Venta_P AS [Porcentaje de Venta], Estado_P AS [Estado] FROM Productos");
-        //    return tabla;
-        //}
+        private void ArmarParametrosFuncionAgregar(ref SqlCommand comando, Producto producto)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = comando.Parameters.Add("@IDPRODUCTO", SqlDbType.VarChar);
+            SqlParametros.Value = producto.ID_Producto_P1;
+            SqlParametros = comando.Parameters.Add("@CATEGORIA", SqlDbType.VarChar);
+            SqlParametros.Value = producto.Categoria_P1;
+            SqlParametros = comando.Parameters.Add("@DESCRIPCION", SqlDbType.VarChar);
+            SqlParametros.Value = producto.Descripcion_P1;
+            SqlParametros = comando.Parameters.Add("@STOCK", SqlDbType.Int);
+            SqlParametros.Value = producto.Stock_P1;
+            SqlParametros = comando.Parameters.Add("@PUNTODEPEDIDO", SqlDbType.Int);
+            SqlParametros.Value = producto.Punto_De_Pedido_P1;
+            SqlParametros = comando.Parameters.Add("@PORCENTAJEDEVENTA", SqlDbType.Decimal);
+            SqlParametros.Value = producto.Porcentaje_De_Venta_P1;
+            SqlParametros = comando.Parameters.Add("@URL", SqlDbType.VarChar);
+            SqlParametros.Value = producto.URL1;
 
-        //public int EliminarSucursal(Sucursales suc)
-        //{
-        //    SqlCommand comando = new SqlCommand();
-        //    ArmarParametrosSucursalEliminar(ref comando, suc);
-        //    return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarCategoria");
-        //}
-        //public int AgregarSucursal(Sucursales suc)
-        //{
-        //    suc.IdSucursal = ds.ObtenerMaximo("SELECT MAX(Id_Sucursal) FROM Sucursal") + 1;
-        //    SqlCommand comando = new SqlCommand();
-        //    ArmarParametrosSucursalAgregar(ref comando, suc);
-        //    return ds.EjecutarProcedimientoAlmacenado(comando, "spAgregarSucursal");
-        //}
-        //private void ArmarParametrosSucursalEliminar(ref SqlCommand comando, Sucursales suc)
-        //{
-        //    SqlParameter SqlParametros = new SqlParameter();
-        //    SqlParametros = comando.Parameters.Add("@IDSUCURSAL", SqlDbType.Int);
-        //    SqlParametros.Value = suc.IdSucursal;
-        //}
-        //private void ArmarParametrosSucursalAgregar(ref SqlCommand comando, Sucursales suc)
-        //{
-        //    SqlParameter SqlParametros = new SqlParameter();
-        //    SqlParametros = comando.Parameters.Add("@IDSUCURSAL", SqlDbType.Int);
-        //    SqlParametros.Value = suc.IdSucursal;
-        //    SqlParametros = comando.Parameters.Add("@NOMBRESUCURSAL", SqlDbType.VarChar);
-        //    SqlParametros.Value = suc.NombreSucursal;
-        //    SqlParametros = comando.Parameters.Add("@DESCRIPCIONSUCURSAL", SqlDbType.VarChar);
-        //    SqlParametros.Value = suc.DescripcionSucursal;
-        //}
+        }
+
+
     }
 }

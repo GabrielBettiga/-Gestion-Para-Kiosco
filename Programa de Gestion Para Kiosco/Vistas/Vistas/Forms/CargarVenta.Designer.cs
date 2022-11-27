@@ -33,6 +33,7 @@ namespace Vistas.Forms
             this.SUBpanel = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown_CANTIDAD_PRODUCTO = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -48,14 +49,22 @@ namespace Vistas.Forms
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.programa_De_GestionDataSet1 = new Vistas.Programa_De_GestionDataSet();
             this.GridView_productosXcomprar = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ID_Producto_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sub_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quitar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SUBpanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_CANTIDAD_PRODUCTO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programa_De_GestionDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_productosXcomprar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +75,7 @@ namespace Vistas.Forms
             this.SUBpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SUBpanel.Location = new System.Drawing.Point(0, 0);
             this.SUBpanel.Name = "SUBpanel";
-            this.SUBpanel.Size = new System.Drawing.Size(1159, 572);
+            this.SUBpanel.Size = new System.Drawing.Size(1159, 652);
             this.SUBpanel.TabIndex = 8;
             // 
             // flowLayoutPanel1
@@ -77,13 +86,13 @@ namespace Vistas.Forms
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1159, 572);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1159, 652);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.GridView_productosXcomprar);
+            this.panel6.Controls.Add(this.button1);
             this.panel6.Controls.Add(this.numericUpDown_CANTIDAD_PRODUCTO);
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.iconPictureBox1);
@@ -94,6 +103,16 @@ namespace Vistas.Forms
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1159, 365);
             this.panel6.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(826, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.numericUpDown_CANTIDAD_PRODUCTO_Enter);
             // 
             // numericUpDown_CANTIDAD_PRODUCTO
             // 
@@ -130,10 +149,13 @@ namespace Vistas.Forms
             // 
             // TXT_CODIGO_PRODUCTO
             // 
+            /*
             this.TXT_CODIGO_PRODUCTO.Location = new System.Drawing.Point(275, 61);
             this.TXT_CODIGO_PRODUCTO.Name = "TXT_CODIGO_PRODUCTO";
             this.TXT_CODIGO_PRODUCTO.Size = new System.Drawing.Size(391, 22);
             this.TXT_CODIGO_PRODUCTO.TabIndex = 1;
+            this.TXT_CODIGO_PRODUCTO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TXT_CODIGO_PRODUCTO_KeyDown);
+            */
             // 
             // label1
             // 
@@ -202,9 +224,9 @@ namespace Vistas.Forms
             this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
             this.iconButton2.IconColor = System.Drawing.Color.Lime;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(7, 195);
+            this.iconButton2.Location = new System.Drawing.Point(93, 198);
             this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(270, 39);
+            this.iconButton2.Size = new System.Drawing.Size(184, 39);
             this.iconButton2.TabIndex = 13;
             this.iconButton2.Text = "Terminar Venta";
             this.iconButton2.UseVisualStyleBackColor = true;
@@ -243,32 +265,84 @@ namespace Vistas.Forms
             this.label8.TabIndex = 13;
             this.label8.Text = "SubTotal :";
             // 
+            // programa_De_GestionDataSet1
+            // 
+            this.programa_De_GestionDataSet1.DataSetName = "Programa_De_GestionDataSet";
+            this.programa_De_GestionDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // GridView_productosXcomprar
             // 
             this.GridView_productosXcomprar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GridView_productosXcomprar.Location = new System.Drawing.Point(306, 115);
+            this.GridView_productosXcomprar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID_Producto_P,
+            this.Categoria_P,
+            this.Descripcion_P,
+            this.Cantidad,
+            this.Precio,
+            this.Sub_Total,
+            this.Quitar});
+            this.GridView_productosXcomprar.Location = new System.Drawing.Point(275, 112);
             this.GridView_productosXcomprar.Name = "GridView_productosXcomprar";
             this.GridView_productosXcomprar.RowHeadersWidth = 51;
             this.GridView_productosXcomprar.RowTemplate.Height = 24;
-            this.GridView_productosXcomprar.Size = new System.Drawing.Size(680, 198);
-            this.GridView_productosXcomprar.TabIndex = 6;
+            this.GridView_productosXcomprar.Size = new System.Drawing.Size(834, 228);
+            this.GridView_productosXcomprar.TabIndex = 8;
             // 
-            // button1
+            // ID_Producto_P
             // 
-            this.button1.Location = new System.Drawing.Point(826, 61);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.numericUpDown_CANTIDAD_PRODUCTO_Enter);
+            this.ID_Producto_P.HeaderText = "ID Producto ";
+            this.ID_Producto_P.MinimumWidth = 6;
+            this.ID_Producto_P.Name = "ID_Producto_P";
+            this.ID_Producto_P.Width = 125;
+            // 
+            // Categoria_P
+            // 
+            this.Categoria_P.HeaderText = "Categoria";
+            this.Categoria_P.MinimumWidth = 6;
+            this.Categoria_P.Name = "Categoria_P";
+            this.Categoria_P.Width = 125;
+            // 
+            // Descripcion_P
+            // 
+            this.Descripcion_P.HeaderText = "Descripcion";
+            this.Descripcion_P.MinimumWidth = 6;
+            this.Descripcion_P.Name = "Descripcion_P";
+            this.Descripcion_P.Width = 125;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 125;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 125;
+            // 
+            // Sub_Total
+            // 
+            this.Sub_Total.HeaderText = "Sub_Total";
+            this.Sub_Total.MinimumWidth = 6;
+            this.Sub_Total.Name = "Sub_Total";
+            this.Sub_Total.Width = 125;
+            // 
+            // Quitar
+            // 
+            this.Quitar.HeaderText = "-";
+            this.Quitar.MinimumWidth = 6;
+            this.Quitar.Name = "Quitar";
+            this.Quitar.Width = 125;
             // 
             // CargarVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1159, 572);
+            this.ClientSize = new System.Drawing.Size(1159, 652);
             this.Controls.Add(this.SUBpanel);
             this.Name = "CargarVenta";
             this.Text = "CargarVenta";
@@ -280,6 +354,7 @@ namespace Vistas.Forms
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.programa_De_GestionDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_productosXcomprar)).EndInit();
             this.ResumeLayout(false);
 
@@ -305,7 +380,15 @@ namespace Vistas.Forms
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown_CANTIDAD_PRODUCTO;
-        private System.Windows.Forms.DataGridView GridView_productosXcomprar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView GridView_productosXcomprar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_Producto_P;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria_P;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion_P;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sub_Total;
+        private System.Windows.Forms.DataGridViewButtonColumn Quitar;
+        private Programa_De_GestionDataSet programa_De_GestionDataSet1;
     }
 }
