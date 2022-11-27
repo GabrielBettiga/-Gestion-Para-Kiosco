@@ -43,6 +43,7 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -134,12 +135,6 @@
     <Compile Include="Forms\HistorialDeVentas.Designer.cs">
       <DependentUpon>HistorialDeVentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PantallaInicial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PantallaInicial.Designer.cs">
-      <DependentUpon>PantallaInicial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Productos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,9 +204,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HistorialDeVentas.resx">
       <DependentUpon>HistorialDeVentas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PantallaInicial.resx">
-      <DependentUpon>PantallaInicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

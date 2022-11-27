@@ -18,8 +18,21 @@ namespace Negocios
         {
             int cantFilas = 0;
             DAOProductos dao = new DAOProductos();
+
+            if (dao.ExisteProducto(producto) == false)
+            {
                 cantFilas = dao.AgregarProducto(producto);
-            return true;
+            }
+            if (cantFilas == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+            
 
         }
 

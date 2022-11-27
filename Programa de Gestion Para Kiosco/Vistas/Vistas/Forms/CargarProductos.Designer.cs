@@ -29,11 +29,9 @@ namespace Vistas.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CargarProductos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxURL = new System.Windows.Forms.TextBox();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.BTNGuardar = new System.Windows.Forms.Button();
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.textBoxPuntoDePedido = new System.Windows.Forms.TextBox();
@@ -48,16 +46,34 @@ namespace Vistas.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.LBLguardar = new System.Windows.Forms.Label();
+            this.LBLvalidarCodigo = new System.Windows.Forms.Label();
+            this.LBLvalidarDescripcion = new System.Windows.Forms.Label();
+            this.LBLvalidarCategoria = new System.Windows.Forms.Label();
+            this.LBLvalidarPorcentaje = new System.Windows.Forms.Label();
+            this.LBLvalidarStock = new System.Windows.Forms.Label();
+            this.LBLvalidarPuntoDePedido = new System.Windows.Forms.Label();
+            this.BTNbuscarImagen = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.BTNbuscarImagen);
+            this.panel1.Controls.Add(this.LBLvalidarPuntoDePedido);
+            this.panel1.Controls.Add(this.LBLvalidarStock);
+            this.panel1.Controls.Add(this.LBLvalidarPorcentaje);
+            this.panel1.Controls.Add(this.LBLvalidarCategoria);
+            this.panel1.Controls.Add(this.LBLvalidarDescripcion);
+            this.panel1.Controls.Add(this.LBLvalidarCodigo);
+            this.panel1.Controls.Add(this.LBLguardar);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.textBoxURL);
-            this.panel1.Controls.Add(this.iconPictureBox1);
             this.panel1.Controls.Add(this.BTNGuardar);
             this.panel1.Controls.Add(this.comboBoxCategoria);
             this.panel1.Controls.Add(this.textBoxPuntoDePedido);
@@ -74,7 +90,7 @@ namespace Vistas.Forms
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(700, 437);
             this.panel1.TabIndex = 6;
@@ -93,32 +109,15 @@ namespace Vistas.Forms
             // textBoxURL
             // 
             this.textBoxURL.Location = new System.Drawing.Point(385, 253);
-            this.textBoxURL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxURL.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxURL.Name = "textBoxURL";
             this.textBoxURL.Size = new System.Drawing.Size(177, 20);
             this.textBoxURL.TabIndex = 17;
             // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.iconPictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("iconPictureBox1.BackgroundImage")));
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 161;
-            this.iconPictureBox1.Location = new System.Drawing.Point(385, 32);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(161, 193);
-            this.iconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconPictureBox1.TabIndex = 16;
-            this.iconPictureBox1.TabStop = false;
-            // 
             // BTNGuardar
             // 
             this.BTNGuardar.Location = new System.Drawing.Point(116, 293);
-            this.BTNGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BTNGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.BTNGuardar.Name = "BTNGuardar";
             this.BTNGuardar.Size = new System.Drawing.Size(176, 32);
             this.BTNGuardar.TabIndex = 15;
@@ -130,7 +129,7 @@ namespace Vistas.Forms
             // 
             this.comboBoxCategoria.FormattingEnabled = true;
             this.comboBoxCategoria.Location = new System.Drawing.Point(116, 132);
-            this.comboBoxCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxCategoria.Name = "comboBoxCategoria";
             this.comboBoxCategoria.Size = new System.Drawing.Size(177, 21);
             this.comboBoxCategoria.TabIndex = 14;
@@ -138,7 +137,7 @@ namespace Vistas.Forms
             // textBoxPuntoDePedido
             // 
             this.textBoxPuntoDePedido.Location = new System.Drawing.Point(116, 253);
-            this.textBoxPuntoDePedido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPuntoDePedido.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPuntoDePedido.Name = "textBoxPuntoDePedido";
             this.textBoxPuntoDePedido.Size = new System.Drawing.Size(177, 20);
             this.textBoxPuntoDePedido.TabIndex = 13;
@@ -146,7 +145,7 @@ namespace Vistas.Forms
             // textBoxStock
             // 
             this.textBoxStock.Location = new System.Drawing.Point(116, 223);
-            this.textBoxStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxStock.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxStock.Name = "textBoxStock";
             this.textBoxStock.Size = new System.Drawing.Size(177, 20);
             this.textBoxStock.TabIndex = 12;
@@ -154,7 +153,7 @@ namespace Vistas.Forms
             // textBoxPorcentajeVenta
             // 
             this.textBoxPorcentajeVenta.Location = new System.Drawing.Point(116, 193);
-            this.textBoxPorcentajeVenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPorcentajeVenta.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPorcentajeVenta.Name = "textBoxPorcentajeVenta";
             this.textBoxPorcentajeVenta.Size = new System.Drawing.Size(177, 20);
             this.textBoxPorcentajeVenta.TabIndex = 11;
@@ -162,7 +161,7 @@ namespace Vistas.Forms
             // textBoxDescripcion
             // 
             this.textBoxDescripcion.Location = new System.Drawing.Point(116, 101);
-            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(177, 20);
             this.textBoxDescripcion.TabIndex = 9;
@@ -170,7 +169,7 @@ namespace Vistas.Forms
             // textBoxCodigo
             // 
             this.textBoxCodigo.Location = new System.Drawing.Point(116, 68);
-            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(177, 20);
             this.textBoxCodigo.TabIndex = 8;
@@ -252,18 +251,97 @@ namespace Vistas.Forms
             this.label1.TabIndex = 0;
             this.label1.Text = "Nuevo Producto";
             // 
+            // LBLguardar
+            // 
+            this.LBLguardar.AutoSize = true;
+            this.LBLguardar.Location = new System.Drawing.Point(116, 353);
+            this.LBLguardar.Name = "LBLguardar";
+            this.LBLguardar.Size = new System.Drawing.Size(0, 13);
+            this.LBLguardar.TabIndex = 19;
+            // 
+            // LBLvalidarCodigo
+            // 
+            this.LBLvalidarCodigo.AutoSize = true;
+            this.LBLvalidarCodigo.Location = new System.Drawing.Point(299, 72);
+            this.LBLvalidarCodigo.Name = "LBLvalidarCodigo";
+            this.LBLvalidarCodigo.Size = new System.Drawing.Size(0, 13);
+            this.LBLvalidarCodigo.TabIndex = 20;
+            // 
+            // LBLvalidarDescripcion
+            // 
+            this.LBLvalidarDescripcion.AutoSize = true;
+            this.LBLvalidarDescripcion.Location = new System.Drawing.Point(298, 108);
+            this.LBLvalidarDescripcion.Name = "LBLvalidarDescripcion";
+            this.LBLvalidarDescripcion.Size = new System.Drawing.Size(0, 13);
+            this.LBLvalidarDescripcion.TabIndex = 21;
+            // 
+            // LBLvalidarCategoria
+            // 
+            this.LBLvalidarCategoria.AutoSize = true;
+            this.LBLvalidarCategoria.Location = new System.Drawing.Point(298, 140);
+            this.LBLvalidarCategoria.Name = "LBLvalidarCategoria";
+            this.LBLvalidarCategoria.Size = new System.Drawing.Size(0, 13);
+            this.LBLvalidarCategoria.TabIndex = 22;
+            // 
+            // LBLvalidarPorcentaje
+            // 
+            this.LBLvalidarPorcentaje.AutoSize = true;
+            this.LBLvalidarPorcentaje.Location = new System.Drawing.Point(298, 196);
+            this.LBLvalidarPorcentaje.Name = "LBLvalidarPorcentaje";
+            this.LBLvalidarPorcentaje.Size = new System.Drawing.Size(0, 13);
+            this.LBLvalidarPorcentaje.TabIndex = 23;
+            // 
+            // LBLvalidarStock
+            // 
+            this.LBLvalidarStock.AutoSize = true;
+            this.LBLvalidarStock.Location = new System.Drawing.Point(298, 226);
+            this.LBLvalidarStock.Name = "LBLvalidarStock";
+            this.LBLvalidarStock.Size = new System.Drawing.Size(0, 13);
+            this.LBLvalidarStock.TabIndex = 24;
+            // 
+            // LBLvalidarPuntoDePedido
+            // 
+            this.LBLvalidarPuntoDePedido.AutoSize = true;
+            this.LBLvalidarPuntoDePedido.Location = new System.Drawing.Point(298, 256);
+            this.LBLvalidarPuntoDePedido.Name = "LBLvalidarPuntoDePedido";
+            this.LBLvalidarPuntoDePedido.Size = new System.Drawing.Size(0, 13);
+            this.LBLvalidarPuntoDePedido.TabIndex = 25;
+            // 
+            // BTNbuscarImagen
+            // 
+            this.BTNbuscarImagen.Location = new System.Drawing.Point(567, 250);
+            this.BTNbuscarImagen.Name = "BTNbuscarImagen";
+            this.BTNbuscarImagen.Size = new System.Drawing.Size(97, 23);
+            this.BTNbuscarImagen.TabIndex = 26;
+            this.BTNbuscarImagen.Text = "Buscar Imagen";
+            this.BTNbuscarImagen.UseVisualStyleBackColor = true;
+            this.BTNbuscarImagen.Click += new System.EventHandler(this.BTNbuscarImagen_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(385, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(177, 211);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
             // CargarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 437);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CargarProductos";
             this.Text = "CargarProductos";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -285,8 +363,17 @@ namespace Vistas.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button BTNGuardar;
         private System.Windows.Forms.ComboBox comboBoxCategoria;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBoxURL;
+        private System.Windows.Forms.Label LBLguardar;
+        private System.Windows.Forms.Label LBLvalidarCodigo;
+        private System.Windows.Forms.Label LBLvalidarPuntoDePedido;
+        private System.Windows.Forms.Label LBLvalidarStock;
+        private System.Windows.Forms.Label LBLvalidarPorcentaje;
+        private System.Windows.Forms.Label LBLvalidarCategoria;
+        private System.Windows.Forms.Label LBLvalidarDescripcion;
+        private System.Windows.Forms.Button BTNbuscarImagen;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

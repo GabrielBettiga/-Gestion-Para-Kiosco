@@ -23,6 +23,12 @@ namespace DAO
             return ds.EjecutarProcedimientoAlmacenado(comando, "sp_AgregarProducto");
         }
 
+        public Boolean ExisteProducto(Producto producto)
+        {
+            string consulta = "SELECT * FROM PRODUCTOS WHERE ID_Producto_P = '" + producto.ID_Producto_P1 + "'";
+            return ds.Existe(consulta);
+        }
+
         public DataTable ListarProductos    (Paginacion obj)
         {
             DataTable tabla = ds.ObtenerTabla("Productos", "SELECT * FROM PRODUCTOS WHERE  Numero_P between "+obj.VarDatoInicio1+" and "+obj.VarDatoFin1);
